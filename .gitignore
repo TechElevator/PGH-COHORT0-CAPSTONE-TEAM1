@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/target/
-=======
 
 # Created by https://www.gitignore.io/api/java,macos,maven,eclipse
 
@@ -133,4 +130,3 @@ buildNumber.properties
 
 
 # End of https://www.gitignore.io/api/java,macos,maven,eclipse
->>>>>>> eb53107e0d5df69e5323a60d01314dd6ae23892e

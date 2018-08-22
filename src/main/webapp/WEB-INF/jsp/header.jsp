@@ -70,8 +70,5 @@
 					</c:choose>
 				</ul>
 			</div>
-		</nav>
-		<c:if test="${not empty currentUser}">
-			<p id="currentUser">Current User: ${currentUser}</p>
-		</c:if>		
+		</nav>	
 		<div class="container">

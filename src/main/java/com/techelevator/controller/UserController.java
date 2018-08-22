@@ -53,7 +53,14 @@ public class UserController {
 	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
 	public String displayUserPage(@PathVariable String userName, HttpSession session) {
-		return "userPage";
+		User currentUser = (User) session.getAttribute("currentUser");
+		if (currentUser == null) {
+			return "redirect:/login";
+		} else if (!userName.equals(currentUser.getUserName())) {
+			return "redirect:/";
+		} else {
+			return "userPage";			
+		}
 	}
 	
 }

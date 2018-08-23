@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -22,6 +24,11 @@ public class UserController {
 	@Autowired
 	public UserController(UserDAO userDAO) {
 		this.userDAO = userDAO;
+	}
+	
+	@RequestMapping(path="/", method=RequestMethod.GET)
+	public String displayHomePage() {
+		return "home";
 	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
@@ -44,5 +51,16 @@ public class UserController {
 		return "redirect:/login";
 	}
 	
+	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
+	public String displayUserPage(@PathVariable String userName, HttpSession session) {
+		User currentUser = (User) session.getAttribute("currentUser");
+		if (currentUser == null) {
+			return "redirect:/login";
+		} else if (!userName.equals(currentUser.getUserName())) {
+			return "redirect:/";
+		} else {
+			return "userPage";			
+		}
+	}
 	
 }

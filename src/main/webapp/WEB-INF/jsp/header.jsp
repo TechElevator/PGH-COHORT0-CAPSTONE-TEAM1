@@ -10,7 +10,7 @@
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	    <c:url var="cssHref" value="/site.css" />
+	    <c:url var="cssHref" value="/css/site.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		
 		<script type="text/javascript">
@@ -31,16 +31,22 @@
 		
 	</head>
 	<body>
-		<header>
-			<c:url var="homePageHref" value="/" />
-			<c:url var="imgSrc" value="/img/coffee.png" />
-			<a href="${homePageHref}"><img src="${imgSrc}" class="img-responsive" /></a>
-		</header>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav">
+
+	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav navbar-right">	
 					<c:url var="homePageHref" value="/" />
-					<li><a href="${homePageHref}">Home</a></li>
+					<li><a href="${homePageHref}">The Daily Grind</a></li>
 					<c:if test="${not empty currentUser}">
 						<c:url var="dashboardHref" value="/users/${currentUser}" />
 						<li><a href="${dashboardHref}">Private Messages</a></li>
@@ -52,7 +58,7 @@
 						<li><a href="${changePasswordHref}">Change Password</a></li>
 					</c:if>
 				</ul>
-				<ul class="nav navbar-nav navbar-right">
+			<ul class="nav navbar-nav navbar-right">
 					<c:choose>
 						<c:when test="${empty currentUser}">
 							<c:url var="newUserHref" value="/users/new" />
@@ -68,8 +74,11 @@
 							<li><a id="logoutLink" href="#">Log Out</a></li>
 						</c:otherwise>
 					</c:choose>
-				</ul>
-			</div>
-		</nav>	
-		<div id="map"></div>
-		<div class="container">
+			</ul>
+		</div>
+	</div>
+	</nav>	
+		
+
+
+		

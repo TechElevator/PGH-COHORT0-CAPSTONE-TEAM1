@@ -2,11 +2,14 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<div class="jumbotron-fluid">
-	<div class="container-fluid">
+<div class="jumbotron">
+<div class="container-full-bg">	
+<div class="container special">
+	
 		<h1>The Daily Grind</h1>
-		<p>Are you ready to get #litaf? Find the best "coffee shops" in Pittsburgh. What are you waiting for?</p>
-	</div>
+		<h2>Are you ready to get #litaf? Find the best "coffee shops" in Pittsburgh. What are you waiting for?</p>
+	</div>	
+</div>
 </div>
 
 <section>

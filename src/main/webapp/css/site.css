@@ -1,5 +1,19 @@
-body {
+html,body {
+	height:100%;
+	width:100%;
+}
 
+.container-full-bg 
+	{width:100%;
+	height:100%;
+	max-width:100%;
+	background-position:center;
+	background-size:cover;
+}
+
+.container-full-bg .container, .container-full-bg .container .jumbotron {
+	height:100%;
+	width:100%;
 }
 
 #nav {
@@ -10,14 +24,17 @@ body {
 
 }
 
-.jumbotron-fluid {
-	background-image: url("../img/coffee.jpg");
+.jumbotron {
+	background-image: url("../img/covfefe.jpg");
+	background-repeat: no-repeat;	
 	background-size: cover;
-	height:650px;
+	position: relative;
+	height: 100vh;
 	color: white;
 	text-align: center;
 	border-color:transparent;
 }
+
 
 #col1 {
 	border-color: #8a898a;

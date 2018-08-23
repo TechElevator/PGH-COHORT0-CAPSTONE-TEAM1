@@ -5,6 +5,8 @@
  */
 
   var map, infoWindow;
+  var markers = [];
+
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 40.452326, lng: -79.930317},
@@ -33,10 +35,46 @@
 	    	var service = new google.maps.places.PlacesService(map);
 	        service.nearbySearch({
 	          location: map.getCenter(),
-	          radius: 1500,
+	          rankBy: google.maps.places.RankBy.DISTANCE,
+	          keyword: ['coffee'],
 	          type: ['cafe']
 	        }, callback);
+	        
+	        map.addListener('dragend', function() {
+	    	    // 3 seconds after the center of the map has changed, pan back to the
+	    	    // marker.
+	        	deleteMarkers();
+	    		var service = new google.maps.places.PlacesService(map);
+	    	    service.nearbySearch({
+	    	          location: map.getCenter(),
+	    	          rankBy: google.maps.places.RankBy.DISTANCE,
+	    	          type: ['cafe']
+	    	        }, callback);
+	    	  });
   }
+  
+  function setMapOnAll(map) {
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+      }
+    }
+
+//Removes the markers from the map, but keeps them in the array.
+  function clearMarkers() {
+    setMapOnAll(null);
+  }
+
+  // Shows any markers currently in the array.
+  function showMarkers() {
+    setMapOnAll(map);
+  }
+
+  // Deletes all markers in the array by removing references to them.
+  function deleteMarkers() {
+    clearMarkers();
+    markers = [];
+  }
+
   
   function callback(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -52,6 +90,7 @@
         map: map,
         position: place.geometry.location
       });
+      markers.push(marker);
 
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(place.name);

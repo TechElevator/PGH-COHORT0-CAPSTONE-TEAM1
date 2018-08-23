@@ -40,7 +40,7 @@
 	          type: ['cafe']
 	        }, callback);
 	        
-	        map.addListener('dragend', function() {
+	        map.addListener('center_changed', function() {
 	    	    // 3 seconds after the center of the map has changed, pan back to the
 	    	    // marker.
 	        	deleteMarkers();

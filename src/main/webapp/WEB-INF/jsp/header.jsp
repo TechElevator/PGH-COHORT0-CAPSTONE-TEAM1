@@ -35,11 +35,9 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
 	<div class="container">
 		
-		
-		<c:url var="homePageHref" value="/" />			
-		<h3><a class="nav navbar-nav navbar-center" href="${homePageHref}">The Daily Grind</a></h3>		
-	
-		
+		<c:url var="homePageHref" value="/" />							
+		<a href="${homePageHref}" class="nav navbar-nav navbar-center navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25" id="navtitle">The Daily Grind</a>
+
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
@@ -51,11 +49,11 @@
 						
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			
-			<ul class="nav navbar-nav navbar-left">	
-				<c:url var="aboutPageHref" value="/" />			
-				<li><a href="${aboutPageHref}" id="navbar-left">About</a></li>				
+			<ul class="nav navbar-nav">
+			
+					<li><a href="${aboutPageHref}">About</a></li>
 			</ul>
-									
+											
 			<ul class="nav navbar-nav navbar-right">	
 					<c:if test="${not empty currentUser}">
 						<c:url var="dashboardHref" value="/users/${currentUser}" />
@@ -69,13 +67,14 @@
 					</c:if>
 			</ul>
 			
+		
 			<ul class="nav navbar-nav navbar-right">
 					<c:choose>
 						<c:when test="${empty currentUser}">
 							<c:url var="newUserHref" value="/users/new" />
-							<li><a href="${newUserHref}">Sign Up</a></li>
+							<li><a href="${newUserHref}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
 							<c:url var="loginHref" value="/login" />
-							<li><a href="${loginHref}">Log In</a></li>
+							<li><a href="${loginHref}"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
 						</c:when>
 						<c:otherwise>
 							<c:url var="logoutAction" value="/logout" />

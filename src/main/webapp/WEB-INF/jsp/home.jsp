@@ -3,8 +3,7 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <div class="jumbotron">
-<div class="container special vertical-center">	
-		<h1>The Daily Grind</h1>	
+<div class="container special vertical-center">		
 		<h1>Hello Hello Hello</h1>
 </div>	
 </div>

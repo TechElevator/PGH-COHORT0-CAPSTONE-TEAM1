@@ -30,21 +30,33 @@ html,body {
 }
 
 #navtitle {
-	display: inline-block;
-	float: left;
-	text-align: center;
-	color: white;
-}
-
-#navbar-left {
-	background-color: transparent;
-	color: white;
+	color: #f7f7f7;
+	font-size: 25px;
 }
 
 .navbar-nav.navbar-center{
-	position: absolute;
+	position: relative;
 	left:50%;
+	vertical-align: center;
 	transform: translatex(-50%);
+}
+
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: #27A967;
+}
+
+.navbar-left {
+	background: #27A967;
+	color: #f7f7f7;
+	font-size: 16px;
 }
 
 .jumbotron {
@@ -57,7 +69,6 @@ html,body {
 	text-align: center;
 	border-color:transparent;
 }
-
 
 #col1 {
 	background-color: #7dfef8;

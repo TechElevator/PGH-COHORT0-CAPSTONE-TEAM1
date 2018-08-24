@@ -67,3 +67,20 @@ html,body {
 	background-color: #1df202;
 }
 
+.main_container {
+	clear: both;
+	display: block;
+	width: 80%;
+	margin: 20px auto;
+	vertical-align: top;
+	text-align: center;
+	min-height: 450px;
+	background-color: #FFF;
+	border-radius: 7px;
+	padding-top:20px;
+	padding-bottom: 20px;
+}
+
+.row {
+	margin-top: 55px;
+}

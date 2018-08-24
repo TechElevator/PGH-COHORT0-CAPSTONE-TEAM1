@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Critter</title>
+		<title>The Daily Grind</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
@@ -34,6 +34,12 @@
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
 	<div class="container">
+		
+		
+		<c:url var="homePageHref" value="/" />			
+		<h3><a class="nav navbar-nav navbar-center" href="${homePageHref}">The Daily Grind</a></h3>		
+	
+		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
@@ -41,12 +47,16 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-		</div>
-		
+		</div>				
+						
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			
+			<ul class="nav navbar-nav navbar-left">	
+				<c:url var="aboutPageHref" value="/" />			
+				<li><a href="${aboutPageHref}" id="navbar-left">About</a></li>				
+			</ul>
+									
 			<ul class="nav navbar-nav navbar-right">	
-					<c:url var="homePageHref" value="/" />
-					<li><a href="${homePageHref}">The Daily Grind</a></li>
 					<c:if test="${not empty currentUser}">
 						<c:url var="dashboardHref" value="/users/${currentUser}" />
 						<li><a href="${dashboardHref}">Private Messages</a></li>
@@ -57,7 +67,8 @@
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
 					</c:if>
-				</ul>
+			</ul>
+			
 			<ul class="nav navbar-nav navbar-right">
 					<c:choose>
 						<c:when test="${empty currentUser}">
@@ -75,7 +86,7 @@
 						</c:otherwise>
 					</c:choose>
 			</ul>
-		</div>
+	</div>
 	</div>
 	</nav>	
 		

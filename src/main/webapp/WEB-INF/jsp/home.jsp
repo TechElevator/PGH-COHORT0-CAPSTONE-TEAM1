@@ -3,13 +3,10 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <div class="jumbotron">
-<div class="container-full-bg">	
-<div class="container special">
-	
-		<h1>The Daily Grind</h1>
-		<h2>Are you ready to get #litaf? Find the best "coffee shops" in Pittsburgh. What are you waiting for?</p>
-	</div>	
-</div>
+<div class="container special vertical-center">	
+		<h1>The Daily Grind</h1>	
+		<h1>Hello Hello Hello</h1>
+</div>	
 </div>
 
 <section>

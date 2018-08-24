@@ -32,6 +32,7 @@
       handleLocationError(false, infowindow, map.getCenter());
     }
 
+    //call places and populate map with markers
 	    	var service = new google.maps.places.PlacesService(map);
 	        service.nearbySearch({
 	          location: map.getCenter(),
@@ -48,6 +49,7 @@
 	    	    service.nearbySearch({
 	    	          location: map.getCenter(),
 	    	          rankBy: google.maps.places.RankBy.DISTANCE,
+	    	          keyword: ['coffee'],
 	    	          type: ['cafe']
 	    	        }, callback);
 	    	  });

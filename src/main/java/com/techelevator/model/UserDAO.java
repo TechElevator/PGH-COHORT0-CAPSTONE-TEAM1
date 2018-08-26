@@ -12,4 +12,6 @@ public interface UserDAO {
 	
 	public String getUserRole(String userName);
 
+	long getUserId(String userName);
+
 }

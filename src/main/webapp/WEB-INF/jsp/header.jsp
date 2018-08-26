@@ -5,11 +5,14 @@
 	<head>
 		<title>The Daily Grind</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
 	    <c:url var="cssHref" value="/css/site.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		
@@ -31,6 +34,7 @@
 		
 	</head>
 	<body>
+ 	
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
 	<div class="container">
@@ -50,7 +54,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			
 			<ul class="nav navbar-nav">
-			
+					<c:url var="aboutPageHref" value="/homepage" />
 					<li><a href="${aboutPageHref}">About</a></li>
 			</ul>
 											
@@ -87,8 +91,7 @@
 			</ul>
 	</div>
 	</div>
-	</nav>	
-		
+	</nav>			
 
 
 		

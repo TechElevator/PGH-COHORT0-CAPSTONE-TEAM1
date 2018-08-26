@@ -1,7 +1,6 @@
-		</div>
-		
+
 		<footer>
-			Copyright 2016 Critter Inc.
+		<h4 style="text-align: center">The Daily Grind ©</h4>
 		</footer>
 	</body>
 </html>

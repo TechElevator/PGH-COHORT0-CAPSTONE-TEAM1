@@ -90,8 +90,7 @@
     		$(".shop").remove();
         for (var i = 0; i < results.length; i++) {
         	globalResults[i] = results[i];
-        //	shopText = $("<div/>", {"class":"col-md-6"}).append($("<p/>", {"id": "shop" + i}).text(globalResults[i].name));
-		//	$("#shopsDisplay").text(shopText);
+
 
     		
     		

@@ -71,5 +71,5 @@
 				</ul>
 			</div>
 		</nav>	
-		<div id="map"></div>
-		<div class="container">
+		
+		<div class="container-fluid">

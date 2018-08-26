@@ -3,7 +3,8 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <style>
 	#map {
-		height:100%;
+		height:400px;
+		width:100%;
 	}
       html, body {
         height: 100%;
@@ -12,11 +13,14 @@
       }
 
 </style>
-<h2>Welcome, ${userName}</h2>
 
+<h2 class="text-center">Welcome, ${userName}</h2>
+<div id="map"></div>
+<div id="shopsDisplay">
+	
+</div>
 <script type="text/javascript" src="../js/map.js">
     </script>
-
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsSGxEdf8gucMQtnMY2PLG3Drnq42dzz8&libraries=places&callback=initMap">
     </script>

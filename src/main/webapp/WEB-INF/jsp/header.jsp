@@ -44,11 +44,14 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
+			
+			<div class="nav navbar-nav navbar-brand">
+				<c:url var="homePageHref" value="/" />							
+				<a href="${homePageHref}" id="navtitle">The Daily Grind</a>
+			</div>			
 		</div>				
 		
 		<%--class="nav navbar-nav navbar-center navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25" --%>
-		<c:url var="homePageHref" value="/" />							
-		<a href="${homePageHref}" class="nav navbar-nav" id="navtitle">The Daily Grind</a>
 																			
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			

@@ -4,7 +4,7 @@
 
 
 <div class="jumbotron">
-<div class="container special vertical-center">		
+<div class="container vertical-center">		
 		<h1 style="font-family: 'Pacifico', cursive;">Mapping Pittsburgh's </br> Coffee Bars</h1>
 </div>	
 </div>

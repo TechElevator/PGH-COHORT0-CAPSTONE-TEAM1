@@ -1,18 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
-<style>
-	#map {
-		height:400px;
-		width:100%;
-	}
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
 
-</style>
 
 <h2 class="text-center">Welcome, ${userName}</h2>
 <div id="map"></div>

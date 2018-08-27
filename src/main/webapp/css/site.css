@@ -3,6 +3,18 @@ html,body {
 	width:100%;
 }
 
+.container-fluid {
+	background-color:#DAA671;
+}
+
+.well {
+	background-color:#312319;
+}
+
+.shopInfo {
+	color:#DAA671;
+}
+
 .container .jumbotron {
 	height:100%;
 	width:100%;
@@ -77,6 +89,11 @@ html,body {
 #col2 {
 	background-color: #1df202;
 }
+
+#map {
+		height:400px;
+		width:100%;
+	}
 
 .main_container {
 	clear: both;

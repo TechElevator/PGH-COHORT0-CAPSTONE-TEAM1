@@ -91,13 +91,17 @@
         for (var i = 0; i < results.length; i++) {
         	globalResults[i] = results[i];
 
-
+        	var request = {
+        			  placeId: globalResults[i].place_id,
+        			  fields: ['name', 'rating', 'formatted_phone_number', 'geometry']
+        			};
+        	
     		
     		
     		if(i % 2 == 0){
-			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center' id='shop" + i + "'>" + globalResults[i].name + "</h2></div><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div></div>");
+			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>"+ globalResults[i].vicinity +"</p></div><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div></div>");
     		} else {
-			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div><div class='col-md-6'><h2 class='text-center' id='shop" + i + "'>" + globalResults[i].name + "</h2></div></div>");
+			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>" + globalResults[i].vicinity + "</p></div></div>");
     		}
     		
         

@@ -1,0 +1,178 @@
+html,body {
+	height:100%;
+	width:100%;
+}
+
+.container-fluid {
+	background-color:#DAA671;
+	padding: 0px;
+}
+
+.well {
+	background-color:#312319;
+}
+
+.shopInfo {
+	color:#DAA671;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+
+/*
+~~~~~ jumbotron ~~~~~
+*/
+
+
+
+.vertical-center {
+	min-height: 100%;
+	min-height: 100vh;
+	
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.jumbotron {	
+	background-image: url("../img/covfefe.jpg"); 
+	background-repeat: no-repeat;	
+	background-size: 100% 100%;
+	position: relative;
+	height: 100vh;
+	color: white;
+	text-align: center;
+	border-color:transparent;
+	margin: 0px;
+}
+
+/*
+~~~~~ navigation bar ~~~~~
+*/
+
+#nav {
+	background-color: #8a898a;
+	opacity: 0.9;
+	filter:(opacity=70);
+	border-color: transparent;
+}
+
+#navOptions {
+	color: #b6744c;
+}
+
+#navtitle {
+	color: #b6744c;
+	font-size: 25px;
+	font-family: 'Pacifico', cursive;
+}
+
+@media (min-width: 768px) {
+.navbar-brand.abs
+    {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+}
+
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-nav {
+	margin: 0px;
+}
+
+.navbar-nav.navbar-center{
+	position: relative;
+	left:50%;
+	vertical-align: center;
+}
+
+.navbar-inverse {
+	background: #2E2F31;
+	border: 0;
+}
+.navbar-inverse .navbar-nav li a {
+	color: #f7f7f7;
+	font-size: 16px;
+}
+.navbar-inverse .navbar-nav li a:hover {
+	background: #27A967;
+}
+
+.navbar-left {
+	background: #27A967;
+	color: #f7f7f7;
+	font-size: 16px;
+}
+
+/*
+~~~~~home page columns ~~~~~
+*/
+
+#col1 {
+	background-image: url("../img/beans.jpg");
+	background-position: center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 300px;
+	padding: 0px;
+}
+
+#col2 {
+	background-color: #666867;
+	height: 300px;
+	padding:50px;
+}
+
+#map {
+		height:400px;
+		width:100%;
+	}
+
+#col3 {
+	background-color: #e1eae7;
+	height: 300px;
+	padding: 50px;
+}
+
+#col4 {
+	background-image: url("../img/coffee1.jpg");
+	background-position: center center;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 300px;
+
+}
+
+/*
+~~~~~New User Jsp~~~~~
+*/
+
+#form{
+	margin-top: 50px;
+
+}
+
+#newUser{
+	height: 400px;
+	padding-top: 100px;
+}
+/*
+~~~~~footer~~~~~
+*/
+
+footer {
+	background-color: #909492;
+	height: 100px;
+	margin: -10px;
+	padding: 0px;
+}

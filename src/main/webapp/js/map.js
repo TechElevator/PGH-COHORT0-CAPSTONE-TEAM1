@@ -6,6 +6,7 @@
 
   var map, infoWindow;
   var markers = [];
+  var globalResults = [];
 
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -34,6 +35,8 @@
 
     //call places and populate map with markers
 	    	var service = new google.maps.places.PlacesService(map);
+	    	deleteMarkers();
+        	clearShopsListed();
 	        service.nearbySearch({
 	          location: map.getCenter(),
 	          rankBy: google.maps.places.RankBy.DISTANCE,
@@ -41,18 +44,17 @@
 	          type: ['cafe']
 	        }, callback);
 	        
-	        map.addListener('center_changed', function() {
-	    	    // 3 seconds after the center of the map has changed, pan back to the
-	    	    // marker.
-	        	deleteMarkers();
-	    		var service = new google.maps.places.PlacesService(map);
-	    	    service.nearbySearch({
-	    	          location: map.getCenter(),
-	    	          rankBy: google.maps.places.RankBy.DISTANCE,
-	    	          keyword: ['coffee'],
-	    	          type: ['cafe']
-	    	        }, callback);
-	    	  });
+	        map.addListener('idle', function() {
+		        	deleteMarkers();
+		        	clearShopsListed();
+		    		var service = new google.maps.places.PlacesService(map);
+		    		service.nearbySearch({
+		    	          location: map.getCenter(),
+		    	          rankBy: google.maps.places.RankBy.DISTANCE,
+		    	          keyword: ['coffee'],
+		    	          type: ['cafe']
+		    	        }, callback);
+	    	    });
   }
   
   function setMapOnAll(map) {
@@ -60,6 +62,13 @@
         markers[i].setMap(map);
       }
     }
+  
+  function clearShopsListed() {
+	  for(var i = 0; i < globalResults.length; i++) {
+		  $("#shop" + i).remove();
+	  }
+	  globalResults = [];
+  }
 
 //Removes the markers from the map, but keeps them in the array.
   function clearMarkers() {
@@ -80,9 +89,29 @@
   
   function callback(results, status) {
       if (status === google.maps.places.PlacesServiceStatus.OK) {
+    		$(".shop").remove();
         for (var i = 0; i < results.length; i++) {
+        	globalResults[i] = results[i];
+
+        	var request = {
+        			  placeId: globalResults[i].place_id,
+        			  fields: ['name', 'rating', 'formatted_phone_number', 'geometry']
+        			};
+        	
+    		
+    		
+    		if(i % 2 == 0){
+			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>"+ globalResults[i].vicinity +"</br>" + globalResults[i].reviews + "</p></div><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div></div>");
+    		} else {
+			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>" + globalResults[i].vicinity + "</p></div></div>");
+    		}
+    		
+        
+        //	$("#shopsDisplay").append("<div class='shop col-md-6'><p id='shop" + i + "'>" + globalResults[i].name + "</p></div><div class='shop col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div>");
           createMarker(results[i]);
         }
+        
+        return results;
       }
     }
 

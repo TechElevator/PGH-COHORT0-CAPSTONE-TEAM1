@@ -88,17 +88,9 @@ Resources:
         Ref: "dbuser"
       MasterUserPassword: 
           Ref: "dbpassword"
-      DBSecurityGroups:
-        - Ref: DBSecurityGroup
-
-          
-  DBSecurityGroup:
-    Type: AWS::RDS::DBSecurityGroup
-    Properties:
-      DBSecurityGroupIngress:
-        EC2SecurityGroupName:
-          Ref: SecurityGroup
-      GroupDescription: Frontend Access
+      VPCSecurityGroups:
+        - Fn::GetAtt: [ SecurityGroup, GroupId ]
+        
         
   LinuxEC2Instance:
     Type: AWS::EC2::Instance

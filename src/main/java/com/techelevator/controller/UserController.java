@@ -59,17 +59,9 @@ public class UserController {
 		} else if (!userName.equals(currentUser.getUserName())) {
 			return "redirect:/";
 		} else {
-			return "redirect:/userLevel";			
+			String userRoll = userDAO.getUserRole(userName);
+			return userRoll;			
 		}
-	}
-	
-	@RequestMapping(path="/userLevel", method=RequestMethod.GET)
-	public String displayUserAccessLevel(HttpSession session) {
-		User currentUser = (User)session.getAttribute("currentUser");
-		if (currentUser == null) return "redirect:/";
-		String userName = currentUser.getUserName();
-		String userRoll = userDAO.getUserRole(userName);
-		return userRoll;
 	}
 	
 }

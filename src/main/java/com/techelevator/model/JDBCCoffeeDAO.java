@@ -1,5 +1,6 @@
 package com.techelevator.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -19,14 +20,29 @@ public class JDBCCoffeeDAO implements CoffeeDAO {
 	
 	@Override
 	public List<Coffee> getCoffeeOffered(String googlePlaceId) {
-		// TODO Auto-generated method stub
-		return null;
+		ArrayList<Coffee> coffees = new ArrayList<Coffee>();
+		String sqlFindCoffeesById = "SELECT coffee.*\n" + 
+				"FROM coffee\n" + 
+				"JOIN place_coffee ON coffee.coffee_id = place_coffee.coffee_id\n" + 
+				"JOIN place ON place_coffee.google_place_id = place.google_place_id\n" + 
+				"WHERE place.google_place_id = ?;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlFindCoffeesById, googlePlaceId);
+		while (results.next()) {
+			Coffee theCoffee = mapRowToCoffee(results);
+			coffees.add(theCoffee);
+		}	
+		return coffees;	
 	}
 
 	@Override
 	public void addNewCoffee(Coffee coffee, String googlePlaceId) {
-		// TODO Auto-generated method stub
+		String sqlAddReview = "INSERT INTO coffee (coffee_name, origin, roaster, detail) VALUES \n" + 
+				"(?, ?, ?, ?)\n" + 
+				"RETURNING coffee_id;";
+		long coffeeId = jdbcTemplate.queryForObject(sqlAddReview, Long.class, coffee.getCoffeeName(), coffee.getOrigin(),
+				coffee.getRoaster(), coffee.getDetail());		
 		
+		addExistingCoffeeToPlace(coffeeId, googlePlaceId);		
 	}
 
 	@Override

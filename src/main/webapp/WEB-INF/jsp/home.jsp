@@ -4,14 +4,14 @@
 
 
 <div class="jumbotron">
-<div class="container vertical-center">		
+<div class="vertical-center">		
 		<h1 style="font-family: 'Pacifico', cursive;">Mapping Pittsburgh's </br> Coffee Bars</h1>
 </div>	
 </div>
 
 
 
-	<div class="row row-eq-height">		
+	<div class="row">		
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col1">			
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col2">
@@ -21,16 +21,17 @@
 		</div>
 	</div>
 
-	<div class="row row-eq-height">		
+	
+	<div class="row">		
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col3">		
 			<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
 			<h3>Cloud Computable</h3>
-			<p>Donec </br>id </br>elit </br>non </br>mi porta </br>gravida at </br>eget </br>metus. <br>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>			
+			<p>Donec </br>id </br>elit </br>non </br>mi porta </br>gravida at </br>eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>			
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col4">
 		</div>
 	</div>
-
+	</div>
 
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

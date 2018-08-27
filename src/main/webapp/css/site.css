@@ -5,6 +5,7 @@ html,body {
 
 .container-fluid {
 	background-color:#DAA671;
+	padding: 0px;
 }
 
 .well {
@@ -35,10 +36,7 @@ img {
 	align-items: center;
 }
 
-.jumbotron {
-		height:100%;
-	width:100%;
-	max-width:100%;
+.jumbotron {	
 	background-image: url("../img/covfefe.jpg"); 
 	background-repeat: no-repeat;	
 	background-size: 100% 100%;
@@ -135,24 +133,10 @@ img {
 	padding:50px;
 }
 
-
 #map {
 		height:400px;
 		width:100%;
 	}
-
-.main_container {
-	clear: both;
-	display: block;
-	width: 80%;
-	margin: 20px auto;
-	vertical-align: top;
-	text-align: center;
-	min-height: 450px;
-	background-color: #FFF;
-	border-radius: 7px;
-	padding-top:20px;
-	padding-bottom: 20px;
 
 #col3 {
 	background-color: #e1eae7;

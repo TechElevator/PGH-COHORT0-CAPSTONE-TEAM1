@@ -11,8 +11,6 @@
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-<script type="text/javascript" src="engine1/jquery.js"></script>
 	    <c:url var="cssHref" value="/css/site.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		
@@ -33,15 +31,12 @@
 		</script>
 		
 	</head>
-	<body>
- 	
+	<body> 	
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
-	<div class="container">
+	<div class="container-fluid">
 		
-		<c:url var="homePageHref" value="/" />							
-		<a href="${homePageHref}" class="nav navbar-nav navbar-center navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25" id="navtitle">The Daily Grind</a>
-
+		
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 				<span class="sr-only">Toggle navigation</span>
@@ -50,24 +45,28 @@
 				<span class="icon-bar"></span>
 			</button>
 		</div>				
-						
+		
+		<%--class="nav navbar-nav navbar-center navbar-brand mx-auto d-block text-center order-0 order-md-1 w-25" --%>
+		<c:url var="homePageHref" value="/" />							
+		<a href="${homePageHref}" class="nav navbar-nav" id="navtitle">The Daily Grind</a>
+																			
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			
 			<ul class="nav navbar-nav">
 					<c:url var="aboutPageHref" value="/homepage" />
-					<li><a href="${aboutPageHref}">About</a></li>
+					<li><a href="${aboutPageHref}" id="navOptions">About</a></li>
 			</ul>
-											
+		
 			<ul class="nav navbar-nav navbar-right">	
 					<c:if test="${not empty currentUser}">
 						<c:url var="dashboardHref" value="/users/${currentUser}" />
-						<li><a href="${dashboardHref}">Private Messages</a></li>
+						<li><a href="${dashboardHref}" id="navOptions">Private Messages</a></li>
 						<c:url var="newMessageHref" value="/users/${currentUser}/messages/new" />
-						<li><a href="${newMessageHref}">New Message</a></li>
+						<li><a href="${newMessageHref}" id="navOptions">New Message</a></li>
 						<c:url var="sentMessagesHref" value="/users/${currentUser}/messages" />
-						<li><a href="${sentMessagesHref}">Sent Messages</a></li>
+						<li><a href="${sentMessagesHref}" id="navOptions">Sent Messages</a></li>
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
-						<li><a href="${changePasswordHref}">Change Password</a></li>
+						<li><a href="${changePasswordHref}" id="navOptions">Change Password</a></li>
 					</c:if>
 			</ul>
 			
@@ -76,9 +75,9 @@
 					<c:choose>
 						<c:when test="${empty currentUser}">
 							<c:url var="newUserHref" value="/users/new" />
-							<li><a href="${newUserHref}"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+							<li><a href="${newUserHref}" id="navOptions"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 							<c:url var="loginHref" value="/login" />
-							<li><a href="${loginHref}"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+							<li><a href="${loginHref}" id="navOptions"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
 						</c:when>
 						<c:otherwise>
 							<c:url var="logoutAction" value="/logout" />

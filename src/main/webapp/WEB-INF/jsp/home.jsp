@@ -13,8 +13,7 @@
 
 <div class="container-fluid" id="con">
 	<div class="row row-eq-height">		
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col1">		
-		<h3 style="color:transparent">Hello World</h3>
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col1">			
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col2">
 			<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
@@ -32,7 +31,6 @@
 			<p>Donec </br>id </br>elit </br>non </br>mi porta </br>gravida at </br>eget </br>metus. <br>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>			
 		</div>
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col4">
-		<h3 style="color:transparent">Hello World</h3>
 		</div>
 	</div>
 </div>

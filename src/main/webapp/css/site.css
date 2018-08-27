@@ -154,6 +154,19 @@ img {
 }
 
 /*
+~~~~~New User Jsp~~~~~
+*/
+
+#form{
+	margin-top: 50px;
+
+}
+
+#newUser{
+	height: 400px;
+	padding-top: 100px;
+}
+/*
 ~~~~~footer~~~~~
 */
 

@@ -4,13 +4,12 @@ import java.util.List;
 
 public interface CoffeeDAO {
 
-	public List<Review> getCoffeeReviewsById(long coffeeId);
+	public List<Coffee> getCoffeeOffered(String googlePlaceId);
 	
-	public List<Place> getPlacesSellingById(long coffeeId);
+	public void addNewCoffee(Coffee coffee, String googlePlaceId);
 	
-	public void addCoffee(Coffee coffee);
+	public void deleteCoffeeFromPlace(long coffeeId, String googlePlaceId);
 	
-	public void deleteCoffee(long coffeeId);
-	
+	public void addExistingCoffeeToPlace(long coffeeId, String googlePlaceId);
 	
 }

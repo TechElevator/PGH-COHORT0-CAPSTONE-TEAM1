@@ -10,7 +10,7 @@ public class Coffee {
 	public long getCoffeeId() {
 		return this.coffeeId;
 	}
-	public void setCoffeeId(int coffeeId) {
+	public void setCoffeeId(long coffeeId) {
 		this.coffeeId = coffeeId;
 	}
 	public String getCoffeeName() {

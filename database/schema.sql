@@ -38,7 +38,7 @@ rating int NOT NULL,
 detail text NOT NULL,
 review_date Date NOT NULL DEFAULT CURRENT_DATE,
 constraint pk_review primary key(review_id)
-)
+);
 
 CREATE TABLE place_coffee(
 google_place_id text,

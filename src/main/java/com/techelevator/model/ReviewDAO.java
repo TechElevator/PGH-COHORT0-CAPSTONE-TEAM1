@@ -8,5 +8,7 @@ public interface ReviewDAO {
 		
 	public void addNewReview(int rating, String detail, long coffeeId, long userId);
 	
+	public List<Review> getCoffeeReviewsById(long coffeeId);
 	
+	public List<Review> getCoffeeReviewsByPlaceId(String googlePlaceId);
 }

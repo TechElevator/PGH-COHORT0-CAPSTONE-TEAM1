@@ -59,8 +59,16 @@ public class UserController {
 		} else if (!userName.equals(currentUser.getUserName())) {
 			return "redirect:/";
 		} else {
-			return "userPage";			
+			return "redirect:/userLevel";			
 		}
+	}
+	
+	@RequestMapping(path="/userLevel", method=RequestMethod.GET)
+	public String displayUserAccessLevel(HttpSession session) {
+		User currentUser = (User)session.getAttribute("currentUser");
+		if (currentUser == null) return "redirect:/";
+		String userRoll = currentUser.getRole();
+		return userRoll;
 	}
 	
 }

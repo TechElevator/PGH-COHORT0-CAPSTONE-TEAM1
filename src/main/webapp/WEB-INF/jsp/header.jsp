@@ -5,14 +5,20 @@
 	<head>
 		<title>The Daily Grind</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
 	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
 
+=======
+	    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+>>>>>>> 9802233ff37c9dda35175f82bc07e1824a050f14
 	    <c:url var="cssHref" value="/css/site.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		
@@ -34,6 +40,7 @@
 		
 	</head>
 	<body>
+ 	
 
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="nav">
 	<div class="container">
@@ -53,7 +60,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			
 			<ul class="nav navbar-nav">
-			
+					<c:url var="aboutPageHref" value="/homepage" />
 					<li><a href="${aboutPageHref}">About</a></li>
 			</ul>
 											
@@ -87,9 +94,19 @@
 							<li><a id="logoutLink" href="#">Log Out</a></li>
 						</c:otherwise>
 					</c:choose>
+<<<<<<< HEAD
 				</ul>
 			</div>
 			</div>
 		</nav>	
 		
 		<div class="container-fluid">
+=======
+			</ul>
+	</div>
+	</div>
+	</nav>			
+
+
+		
+>>>>>>> 9802233ff37c9dda35175f82bc07e1824a050f14

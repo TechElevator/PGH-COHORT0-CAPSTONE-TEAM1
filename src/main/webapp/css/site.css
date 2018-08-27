@@ -44,6 +44,7 @@ html,body {
 #navtitle {
 	color: #f7f7f7;
 	font-size: 25px;
+	font-family: 'Pacifico', cursive;
 }
 
 .navbar-nav.navbar-center{
@@ -72,24 +73,31 @@ html,body {
 }
 
 .jumbotron {
-	background-image: url("../img/covfefe.jpg");
+	background-image: url("../img/covfefe.jpg"); 
 	background-repeat: no-repeat;	
-	background-size: cover;
+	background-size: 100% 100%;
 	position: relative;
 	height: 100vh;
 	color: white;
 	text-align: center;
 	border-color:transparent;
+	margin: 0px;
 }
 
 #col1 {
-	background-color: #7dfef8;
+	background-image: url("../img/beans.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 300px;
+	padding: 0px;
 }
 
 #col2 {
-	background-color: #1df202;
+	background-color: #666867;
+	height: 300px;
 }
 
+<<<<<<< HEAD
 #map {
 		height:400px;
 		width:100%;
@@ -107,8 +115,29 @@ html,body {
 	border-radius: 7px;
 	padding-top:20px;
 	padding-bottom: 20px;
+=======
+#col3 {
+	background-color: #e1eae7;
+	height: 300px;
 }
 
-.row {
-	margin-top: 55px;
+#col4 {
+	background-image: url("../img/coffee1.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 300px;
+>>>>>>> 9802233ff37c9dda35175f82bc07e1824a050f14
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+
+footer {
+	background-color: #909492;
+	height: 100px;
+	margin: -10px;
+	padding: 0px;
 }

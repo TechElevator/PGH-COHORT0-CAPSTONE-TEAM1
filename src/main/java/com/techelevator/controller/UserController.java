@@ -54,13 +54,16 @@ public class UserController {
 	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
 	public String displayUserPage(@PathVariable String userName, HttpSession session) {
+		String userRoll = userDAO.getUserRole(userName);
 		User currentUser = (User) session.getAttribute("currentUser");
 		if (currentUser == null) {
 			return "redirect:/login";
 		} else if (!userName.equals(currentUser.getUserName())) {
 			return "redirect:/";
+		} else if (userRoll.equals("coffeelover")) {
+			return "userPage";
 		} else {
-			return "userPage";			
+			return userRoll;
 		}
 	}
 	

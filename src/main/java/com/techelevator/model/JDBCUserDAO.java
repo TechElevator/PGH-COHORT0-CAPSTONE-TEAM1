@@ -75,8 +75,11 @@ public class JDBCUserDAO implements UserDAO {
 	@Override
 	public String getUserRole(String userName) {
 		String sqlString = "SELECT role FROM app_user WHERE user_name = ?";
+		String role = "";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlString, userName);
-		String role = result.getString("role");
+		if (result.next()) {
+			role = result.getString("role");
+		}
 		return role;
 	}
 	

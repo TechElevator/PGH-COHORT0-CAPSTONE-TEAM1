@@ -11,14 +11,8 @@
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
 	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-
-	    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-<script type="text/javascript" src="engine1/jquery.js"></script>
-=======
->>>>>>> e23d0d918f2704a4b41edb6f148332a29e4eeaa1
 	    <c:url var="cssHref" value="/css/site.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 		

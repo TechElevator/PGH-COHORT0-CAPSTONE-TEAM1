@@ -11,7 +11,6 @@
 
 
 
-<div class="container-fluid" id="con">
 	<div class="row row-eq-height">		
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col1">			
 		</div>
@@ -21,9 +20,7 @@
 			<p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Lorem ipsum dolor.</p>
 		</div>
 	</div>
-</div>
 
-<div class="container-fluid" id="con">
 	<div class="row row-eq-height">		
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col3">		
 			<span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
@@ -33,7 +30,6 @@
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col4">
 		</div>
 	</div>
-</div>
 
 
 

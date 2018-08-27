@@ -23,13 +23,7 @@ img {
 ~~~~~ jumbotron ~~~~~
 */
 
-.container .jumbotron {
-	height:100%;
-	width:100%;
-	max-width:100%;
-	background-position:center center;
-	background-size:cover;
-}
+
 
 .vertical-center {
 	min-height: 100%;
@@ -42,6 +36,9 @@ img {
 }
 
 .jumbotron {
+		height:100%;
+	width:100%;
+	max-width:100%;
 	background-image: url("../img/covfefe.jpg"); 
 	background-repeat: no-repeat;	
 	background-size: 100% 100%;

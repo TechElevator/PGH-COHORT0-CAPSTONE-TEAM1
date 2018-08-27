@@ -27,12 +27,16 @@ public class RESTController {
 	
 	@Autowired
 	private PlaceDAO placeDAO;
+	
+	@Autowired
 	private CoffeeDAO coffeeDAO;
+	
+	@Autowired
 	private ReviewDAO reviewDAO;
 	
 	@RequestMapping(value = "API/coffeeList/{googlePlaceId}", method = RequestMethod.GET, produces = "application/json")
 	public List<Coffee> getCoffeesByPlaceIdJSON(@PathVariable String googlePlaceId) {
-
+		
 		coffeeList = coffeeDAO.getCoffeeOffered(googlePlaceId);
 		return coffeeList;
 	}

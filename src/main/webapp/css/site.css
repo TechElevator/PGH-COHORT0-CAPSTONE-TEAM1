@@ -3,6 +3,17 @@ html,body {
 	width:100%;
 }
 
+.container-fluid {
+	background-color:#DAA671;
+}
+
+.well {
+	background-color:#312319;
+}
+
+.shopInfo {
+	color:#DAA671;
+}
 img {
 	width: 100%;
 	height: auto;
@@ -127,6 +138,25 @@ img {
 	padding:50px;
 }
 
+
+#map {
+		height:400px;
+		width:100%;
+	}
+
+.main_container {
+	clear: both;
+	display: block;
+	width: 80%;
+	margin: 20px auto;
+	vertical-align: top;
+	text-align: center;
+	min-height: 450px;
+	background-color: #FFF;
+	border-radius: 7px;
+	padding-top:20px;
+	padding-bottom: 20px;
+
 #col3 {
 	background-color: #e1eae7;
 	height: 300px;
@@ -139,6 +169,7 @@ img {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 300px;
+
 }
 
 /*

@@ -67,7 +67,8 @@ public class UserController {
 	public String displayUserAccessLevel(HttpSession session) {
 		User currentUser = (User)session.getAttribute("currentUser");
 		if (currentUser == null) return "redirect:/";
-		String userRoll = currentUser.getRole();
+		String userName = currentUser.getUserName();
+		String userRoll = userDAO.getUserRole(userName);
 		return userRoll;
 	}
 	

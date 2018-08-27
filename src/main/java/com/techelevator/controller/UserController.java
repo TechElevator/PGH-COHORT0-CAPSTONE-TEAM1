@@ -59,6 +59,8 @@ public class UserController {
 			return "redirect:/login";
 		} else if (!userName.equals(currentUser.getUserName())) {
 			return "redirect:/";
+		} else if (userRoll.equals("coffeelover")) {
+			return "userPage";
 		} else {
 			return userRoll;
 		}

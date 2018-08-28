@@ -101,9 +101,9 @@
     		
     		
     		if(i % 2 == 0){
-			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>"+ globalResults[i].vicinity +"</br>" + globalResults[i].reviews + "</p></div><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div></div>");
+			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>"+ globalResults[i].vicinity +"</br>" + "</p><a href='/shopDetail?googlePlaceId=" + globalResults[i].place_id + "'>Click for more details</a></div><div class='col-md-6'><img class='center-block' style='width:60%' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div></div>");
     		} else {
-			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><img class='img-responsive center-block' style='height:40em' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>" + globalResults[i].vicinity + "</p></div></div>");
+			$("#shopsDisplay").append("<div class='row shop well'><div class='col-md-6'><img class='center-block' style='width:60%' src='" + globalResults[i].photos[0].getUrl({'maxWidth':10000, 'maxHeight':10000}) + "'/></div><div class='col-md-6'><h2 class='text-center shopInfo' id='shop" + i + "'>" + globalResults[i].name + "</h2><p class='shopInfo'>" + globalResults[i].vicinity + "</p><a href='/shopDetail?googlePlaceId=" + globalResults[i].place_id + "'>Click for more details</a></div></div>");
     		}
     		
         

@@ -11,7 +11,8 @@ html,body {
 
 /*covers primary container-fluid around header to footer*/
 #form{
-	background: linear-gradient(90deg, rgba(255,126,95,1) 0%, rgba(254,180,123,1) 100%);	
+	/*linear-gradient(90deg, rgba(255,126,95,1) 0%, rgba(254,180,123,1) 100%);*/		
+	background-color: #f2f2f2; 
 	margin-top: 50px;	    
     min-height: 95vh; /* will cover 95% of viewport */
  	overflow: hidden;
@@ -48,7 +49,7 @@ img {
 }
 
 .jumbotron {	
-	background-image: url("../img/covfefe.jpg"); 
+	background-image: url("../img/jumbo1.jpg"); 
 	background-repeat: no-repeat;	
 	background-size: 100% 100%;
 	position: relative;
@@ -64,7 +65,7 @@ img {
 */
 
 #navbar {
-	background-color: #8a898a;
+	background-color: #251f16;
 	opacity: 1;
 	filter:(opacity=90);
 	border-color: transparent;
@@ -87,7 +88,7 @@ img {
 */
 
 #col1 {
-	background-image: url("../img/beans.jpg");
+	background-image: url("../img/shop1.jpg");
 	background-position: center center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -96,19 +97,25 @@ img {
 }
 
 #col2 {
-	background-color: #666867;
+	background-color: #e1eae7;
+	vertical-align: middle;
 	height: 300px;
-	padding:50px;
+}
+
+#center {
+	position: absolute;
+  	top: 50%;
+  	left:50%;
+  	transform: translate(-50%,-50%);
 }
 
 #col3 {
 	background-color: #e1eae7;
 	height: 300px;
-	padding: 50px;
 }
 
 #col4 {
-	background-image: url("../img/coffee1.jpg");
+	background-image: url("../img/coffeevar2.jpg");
 	background-position: center center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -129,7 +136,7 @@ img {
 */
 
 #map {
-		height:400px;
+		height:450px;
 		width:100%;
 	}
 	
@@ -153,7 +160,8 @@ footer {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #909492;
+	background-color: #ffffff;
+	border-top: .5px solid black;
 	height: 100px;
 	
 }

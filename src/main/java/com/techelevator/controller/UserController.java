@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -26,9 +27,14 @@ public class UserController {
 		this.userDAO = userDAO;
 	}
 	
-	@RequestMapping(path="/", method=RequestMethod.GET)
+	@RequestMapping(path= {"/", "/homepage"}, method=RequestMethod.GET)
 	public String displayHomePage() {
 		return "home";
+	}
+	
+	@RequestMapping(path="/about", method=RequestMethod.GET)
+	public String displayAboutPage() {
+		return "about";
 	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)

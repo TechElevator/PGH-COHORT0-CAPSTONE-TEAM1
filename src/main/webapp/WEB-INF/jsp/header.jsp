@@ -40,8 +40,8 @@
 	</head>
 	<body> 	
 
-<nav class="navbar fixed-top navbar-dark navbar-expand-md justify-content-between" id="navbar">
-    <div id="navbar" class="container-fluid" >
+<nav class="navbar fixed-top navbar-dark navbar-expand-md justify-content-between" id="navbar" style="background-color: #8a898a">
+    <div class="container-fluid" id="navbar" style="background-color: #8a898a">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
             <span class="navbar-toggler-icon"></span>
         </button>

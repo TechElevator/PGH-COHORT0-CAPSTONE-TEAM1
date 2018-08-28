@@ -6,8 +6,18 @@ html,body {
 }
 
 .container-fluid {
-	background-color:#DAA671;
 	padding: 0px;
+}
+
+/*covers primary container-fluid around header to footer*/
+#form{
+	background: linear-gradient(90deg, rgba(255,126,95,1) 0%, rgba(254,180,123,1) 100%);	
+	margin-top: 50px;	    
+    min-height: 95vh; /* will cover 95% of viewport */
+ 	overflow: hidden;
+ 	display: block;
+ 	position: relative;
+ 	padding-bottom: 100px; 
 }
 
 .well {
@@ -17,6 +27,7 @@ html,body {
 .shopInfo {
 	color:#DAA671;
 }
+
 img {
 	width: 100%;
 	height: auto;
@@ -25,8 +36,6 @@ img {
 /*
 ~~~~~ jumbotron ~~~~~
 */
-
-
 
 .vertical-center {
 	min-height: 100%;
@@ -92,11 +101,6 @@ img {
 	padding:50px;
 }
 
-#map {
-		height:400px;
-		width:100%;
-	}
-
 #col3 {
 	background-color: #e1eae7;
 	height: 300px;
@@ -109,28 +113,38 @@ img {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 300px;
-
 }
 
 /*
-~~~~~New User Jsp~~~~~
+~~~~~user form jsps ~~~~~
 */
-
-#form{
-	margin-top: 50px;
-	    
-    min-height: 100vh; /* will cover the 100% of viewport */
- overflow: hidden;
- display: block;
- position: relative;
- padding-bottom: 100px; 
-}
 
 #newUser{
 	height: auto;
-	padding-top: 100px;
+	padding-top: 75px;
 }
 
+/*
+~~~~~~javascript pages~~~~
+*/
+
+#map {
+		height:400px;
+		width:100%;
+	}
+	
+.well {
+	background-color:#312319;
+}
+
+.shopInfo {
+	color:#DAA671;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}	
 /*
 ~~~~~footer~~~~~
 */

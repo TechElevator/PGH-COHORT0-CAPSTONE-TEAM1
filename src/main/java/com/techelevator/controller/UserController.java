@@ -1,5 +1,8 @@
 package com.techelevator.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.model.User;
@@ -53,7 +57,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
-	public String displayUserPage(@PathVariable String userName, HttpSession session) {
+	public String displayUserPage(@PathVariable String userName, HttpSession session, HttpServletRequest request) {
 		String userRoll = userDAO.getUserRole(userName);
 		User currentUser = (User) session.getAttribute("currentUser");
 		if (currentUser == null) {
@@ -64,9 +68,17 @@ public class UserController {
 			return "userPage";
 		} else if (userRoll.equals("shopowner")) {
 			return userRoll + "?placeId=" + userDAO.getShopId();
-		} else {
-			return userRoll;
+		} else if (userRoll.equals("admin")) {
+			List<User> allUsers = userDAO.getAllUsers();
+			request.setAttribute("allUsers", allUsers);
+			return "admin";
 		}
+		return "/";
 	}
 	
+	@RequestMapping(path="/updateUser", method=RequestMethod.POST)
+	public String updateUserPermission(@RequestParam String userName, @RequestParam String role) {
+		userDAO.updateUserRole(userName, role);
+		return "redirect:/users/{userName}";
+	}
 }

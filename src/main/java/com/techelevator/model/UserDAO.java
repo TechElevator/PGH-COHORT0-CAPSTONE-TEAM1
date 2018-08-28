@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.util.List;
+
 public interface UserDAO {
 
 	public void saveUser(String userName, String password);
@@ -13,5 +15,11 @@ public interface UserDAO {
 	public String getUserRole(String userName);
 
 	long getUserId(String userName);
+	
+	public List<User> getAllUsers();
+	
+	public long getShopId();
+	
+	public void updateUserRole(String userName, String role);
 
 }

@@ -45,4 +45,5 @@
 	</div>
 	<div class="col-sm-4"></div>
 </div>
+
 <c:import url="/WEB-INF/jsp/footer.jsp" />

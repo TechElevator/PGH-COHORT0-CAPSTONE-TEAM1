@@ -1,6 +1,8 @@
 html,body {
-	height:100%;
-	width:100%;
+	height:auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
 
 .container-fluid {
@@ -52,15 +54,11 @@ img {
 ~~~~~ navigation bar ~~~~~
 */
 
-#nav {
+#navbar {
 	background-color: #8a898a;
-	opacity: 0.9;
-	filter:(opacity=70);
+	opacity: 1;
+	filter:(opacity=90);
 	border-color: transparent;
-}
-
-#navOptions {
-	color: #b6744c;
 }
 
 #navtitle {
@@ -69,49 +67,10 @@ img {
 	font-family: 'Pacifico', cursive;
 }
 
-@media (min-width: 768px) {
-.navbar-brand.abs
-    {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
-}
-
-
 .abs-center-x {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.navbar-nav {
-	margin: 0px;
-}
-
-.navbar-nav.navbar-center{
-	position: relative;
-	left:50%;
-	vertical-align: center;
-}
-
-.navbar-inverse {
-	background: #2E2F31;
-	border: 0;
-}
-.navbar-inverse .navbar-nav li a {
-	color: #f7f7f7;
-	font-size: 16px;
-}
-.navbar-inverse .navbar-nav li a:hover {
-	background: #27A967;
-}
-
-.navbar-left {
-	background: #27A967;
-	color: #f7f7f7;
-	font-size: 16px;
 }
 
 /*
@@ -159,20 +118,28 @@ img {
 
 #form{
 	margin-top: 50px;
-
+	    
+    min-height: 100vh; /* will cover the 100% of viewport */
+ overflow: hidden;
+ display: block;
+ position: relative;
+ padding-bottom: 100px; 
 }
 
 #newUser{
-	height: 400px;
+	height: auto;
 	padding-top: 100px;
 }
+
 /*
 ~~~~~footer~~~~~
 */
 
 footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	background-color: #909492;
 	height: 100px;
-	margin: -10px;
-	padding: 0px;
+	
 }

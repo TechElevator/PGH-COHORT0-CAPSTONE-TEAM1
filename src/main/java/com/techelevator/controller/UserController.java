@@ -62,6 +62,8 @@ public class UserController {
 			return "redirect:/";
 		} else if (userRoll.equals("coffeelover")) {
 			return "userPage";
+		} else if (userRoll.equals("shopowner")) {
+			return userRoll + "?placeId=" + userDAO.getShopId();
 		} else {
 			return userRoll;
 		}

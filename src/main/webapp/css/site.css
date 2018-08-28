@@ -1,11 +1,23 @@
 html,body {
-	height:100%;
-	width:100%;
+	height:auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
 
 .container-fluid {
-	background-color:#DAA671;
 	padding: 0px;
+}
+
+/*covers primary container-fluid around header to footer*/
+#form{
+	background: linear-gradient(90deg, rgba(255,126,95,1) 0%, rgba(254,180,123,1) 100%);	
+	margin-top: 50px;	    
+    min-height: 95vh; /* will cover 95% of viewport */
+ 	overflow: hidden;
+ 	display: block;
+ 	position: relative;
+ 	padding-bottom: 100px; 
 }
 
 .well {
@@ -15,6 +27,7 @@ html,body {
 .shopInfo {
 	color:#DAA671;
 }
+
 img {
 	width: 100%;
 	height: auto;
@@ -23,8 +36,6 @@ img {
 /*
 ~~~~~ jumbotron ~~~~~
 */
-
-
 
 .vertical-center {
 	min-height: 100%;
@@ -52,15 +63,11 @@ img {
 ~~~~~ navigation bar ~~~~~
 */
 
-#nav {
+#navbar {
 	background-color: #8a898a;
-	opacity: 0.9;
-	filter:(opacity=70);
+	opacity: 1;
+	filter:(opacity=90);
 	border-color: transparent;
-}
-
-#navOptions {
-	color: #b6744c;
 }
 
 #navtitle {
@@ -69,49 +76,10 @@ img {
 	font-family: 'Pacifico', cursive;
 }
 
-@media (min-width: 768px) {
-.navbar-brand.abs
-    {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
-}
-
-
 .abs-center-x {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.navbar-nav {
-	margin: 0px;
-}
-
-.navbar-nav.navbar-center{
-	position: relative;
-	left:50%;
-	vertical-align: center;
-}
-
-.navbar-inverse {
-	background: #2E2F31;
-	border: 0;
-}
-.navbar-inverse .navbar-nav li a {
-	color: #f7f7f7;
-	font-size: 16px;
-}
-.navbar-inverse .navbar-nav li a:hover {
-	background: #27A967;
-}
-
-.navbar-left {
-	background: #27A967;
-	color: #f7f7f7;
-	font-size: 16px;
 }
 
 /*
@@ -133,11 +101,6 @@ img {
 	padding:50px;
 }
 
-#map {
-		height:400px;
-		width:100%;
-	}
-
 #col3 {
 	background-color: #e1eae7;
 	height: 300px;
@@ -150,29 +113,47 @@ img {
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 300px;
-
 }
 
 /*
-~~~~~New User Jsp~~~~~
+~~~~~user form jsps ~~~~~
 */
 
-#form{
-	margin-top: 50px;
-
-}
-
 #newUser{
-	height: 400px;
-	padding-top: 100px;
+	height: auto;
+	padding-top: 75px;
 }
+
+/*
+~~~~~~javascript pages~~~~
+*/
+
+#map {
+		height:400px;
+		width:100%;
+	}
+	
+.well {
+	background-color:#312319;
+}
+
+.shopInfo {
+	color:#DAA671;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}	
 /*
 ~~~~~footer~~~~~
 */
 
 footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 	background-color: #909492;
 	height: 100px;
-	margin: -10px;
-	padding: 0px;
+	
 }

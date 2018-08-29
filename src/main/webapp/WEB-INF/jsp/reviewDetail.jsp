@@ -15,24 +15,27 @@
 	var reviewArray = [];
 				
 		$ = jQuery;
+		
 		$(document).ready(function() {
 						console.log("Document rdy");
 
-						var placeId = '${param["googlePlaceId"]}';
-						console.log(placeId);
-						var coffee = $("#coffees");
-
-						console.log(coffeeArray);
-
+						var coffeeId = '${param["coffeeId"]}';
+						console.log(coffeeId);
+						
+						function populateReviewList() {
+							for (var i = 0; i < reviewArray.length; i++) {
+								$("#reviews").append("<li>" + reviewArray[i].detail + "</li>");
+							}
+						};	
+																						
 						$.ajax({
-								url : 'API/coffeeList/' + placeId,
+								url : 'API/coffeeList/byCoffeeId/' + coffeeId,
 								type : 'GET',
 								dataType : 'json',
 								contentType : 'application/json',
 								success : function(data) {
-									coffeeArray = data;
-									console.log(coffeeArray);
-									populateCoffeeList();
+									globalCoffee = data;
+									console.log(globalCoffee);
 								},
 								statusCode : {
 									200 : function() {
@@ -42,8 +45,35 @@
 									}
 								}
 							});
-
-					});
+						  											  
+						  $.ajax({
+						        url: 'API/reviewList/byCoffeeId/' + coffeeId,
+						        type: 'GET',
+						        dataType: 'json',
+						        contentType:'application/json',
+						        success: function(data){   			           
+						  			reviewArray = data;	
+						  			console.log(reviewArray);
+						  			populateReviewList();
+						        },
+						        statusCode: {
+						        		200: function() {
+						        			  },     		  	        	
+						       		500: function(){
+						       			alert("Form Submission Failed: Option number already exists");
+						       		}       
+						        }	
+						  });	
+		
+		
+		
+		
+		
+		
+		
+		});
+		
+		
 </script>
 
 

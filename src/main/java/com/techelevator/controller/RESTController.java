@@ -24,6 +24,7 @@ public class RESTController {
 	private List<Coffee> coffeeList = new ArrayList<Coffee>();
 	private List<Review> reviewList = new ArrayList<Review>();
 	private Place place = new Place();
+	private Coffee coffee = new Coffee();
 	
 	@Autowired
 	private PlaceDAO placeDAO;
@@ -39,6 +40,12 @@ public class RESTController {
 		
 		coffeeList = coffeeDAO.getCoffeeOffered(googlePlaceId);
 		return coffeeList;
+	}
+	
+	@RequestMapping(value = "API/coffeeList/byCoffeeId/{coffeeId}", method = RequestMethod.GET, produces = "application/json")
+	public Coffee getCoffeeByCoffeeIdJSON(@PathVariable long coffeeId) {
+		coffee = coffeeDAO.getCoffeeByCoffeeId(coffeeId);
+		return coffee;
 	}
 	
 	@RequestMapping(value = "API/placeList/byGoogleId/{googlePlaceId}", method = RequestMethod.GET, produces = "application/json")
@@ -70,5 +77,6 @@ public class RESTController {
 		reviewList = reviewDAO.getCoffeeReviewsByPlaceId(googlePlaceId);
 		return reviewList;
 	}
-		
+	
+	
 }

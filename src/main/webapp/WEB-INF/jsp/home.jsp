@@ -16,33 +16,30 @@
     <li data-target="#myCarousel" data-slide-to="7"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100 h-100" src="img/jumbo1.jpg" alt="First slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
+    <div class="carousel-item active" id="carousel-1">      
+      <img class="d-block w-100 h-100" src="img/jumbo1.jpg" alt="Third slide">
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 h-100" src="img/jumbo2.jpg" alt="Second slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span> 
+    <div class="carousel-item" id="carousel-2">
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span> 
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" id="carousel-3">
       <img class="d-block w-100 h-100" src="img/jumbo3.jpg" alt="Third slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100 h-100" src="img/jumbo4.jpg" alt="Fourth slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
+    <div class="carousel-item" id="carousel-4">
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" id="carousel-5">
       <img class="d-block w-100 h-100" src="img/jumbo5.jpg" alt="Fifth slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>      
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span>      
     </div>    
-    <div class="carousel-item">
-      <img class="d-block w-100 h-100" src="img/jumbo6.jpg" alt="Sixth slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>      
+    <div class="carousel-item" id="carousel-6">
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span>      
     </div>    
-    <div class="carousel-item">
+    <div class="carousel-item" id="carousel-7">
       <img class="d-block w-100 h-100" src="img/jumbo7.jpg" alt="Seventh slide">
-      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
+      <span class="carousel-title" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>    
   </div>
   
@@ -59,7 +56,7 @@
 	<div class="row">		
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col1">			
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col2">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col2" style="background-image: url('img/jumbo9.jpg'); background-color: transparent;">
 			<h2 id="center" style="font-family: 'Pacifico', cursive; text-align: center">Local Neighborhoods:</br>North Shore </br>Oakland </br>Shadyside </br>Lawrenceville </br>...and More</h2>
 		</div>
 	</div>

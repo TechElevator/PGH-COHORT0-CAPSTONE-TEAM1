@@ -13,5 +13,7 @@ public interface PlaceDAO {
 	public void updatePlace(Place place);
 	
 	public List<Place> getAllPlacesByUserName(String userName);
+	
+	public String getPlaceIdByName(String shopName);
 		
 }

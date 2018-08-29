@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.model.Coffee;
+import com.techelevator.model.CoffeeDAO;
 import com.techelevator.model.Place;
 import com.techelevator.model.PlaceDAO;
 import com.techelevator.model.User;
@@ -28,11 +30,13 @@ public class UserController {
 
 	private UserDAO userDAO;
 	private PlaceDAO placeDAO;
+	private CoffeeDAO coffeeDAO;
 
 	@Autowired
-	public UserController(UserDAO userDAO, PlaceDAO placeDAO) {
+	public UserController(UserDAO userDAO, PlaceDAO placeDAO, CoffeeDAO coffeeDAO) {
 		this.userDAO = userDAO;
 		this.placeDAO = placeDAO;
+		this.coffeeDAO = coffeeDAO;
 	}
 	
 	@RequestMapping(path= {"/", "/homepage"}, method=RequestMethod.GET)
@@ -111,8 +115,20 @@ public class UserController {
 									@RequestParam String detail,
 									@RequestParam String coffeeShopName,
 									HttpSession session) {
+		
 		User currentUser = (User) session.getAttribute("currentUser");
 		String currentUserName = currentUser.getUserName();
+		
+		Coffee coffee = new Coffee();
+		coffee.setCoffeeName(coffeeName);
+		coffee.setOrigin(origin);
+		coffee.setRoaster(roaster);
+		coffee.setDetail(detail);
+		
+		String googlePlaceId = placeDAO.getPlaceIdByName(coffeeShopName);
+		
+		coffeeDAO.addNewCoffee(coffee, googlePlaceId);
+		
 		return "redirect:/users/"+currentUserName;
 	}
 }

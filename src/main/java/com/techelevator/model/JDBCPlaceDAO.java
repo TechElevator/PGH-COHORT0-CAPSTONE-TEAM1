@@ -88,6 +88,16 @@ public class JDBCPlaceDAO implements PlaceDAO{
 		}
 		return allPlaces;
 	}
+	
+	public String getPlaceIdByName(String shopName) {
+		String googlePlaceId = "";
+		String sql = "SELECT google_place_id FROM place WHERE coffee_shop_name = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, shopName);
+		while (results.next()) {
+			googlePlaceId = results.getString("google_place_id");
+		}
+		return googlePlaceId;
+	}
 
 	private Place mapRowToPlace(SqlRowSet results) {
 		Place placeRow = new Place();

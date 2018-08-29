@@ -2,6 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+<h2> </h2>
 <h1>Shop Owner Page</h1>
 <h2>Your Shop Information</h2>
  <ul>
@@ -14,7 +15,6 @@
 	<form method="POST" action="updateCoffee">
 		<p>Coffee Shop
 		<select name="coffeeShopName">
-			<option>Select Shop</option>
 			<c:forEach var="place" items="${requestScope.allPlaces}">
 				<option value="${place.coffeeShopName}">${place.coffeeShopName}</option>
 			</c:forEach>

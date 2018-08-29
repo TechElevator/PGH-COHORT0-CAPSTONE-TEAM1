@@ -77,8 +77,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users/updateUser", method=RequestMethod.POST)
-	public String updateUserPermission(@RequestParam String userName, @RequestParam String role) {
+	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, HttpSession session) {
+		User currentUser = (User) session.getAttribute("currentUser");
+		String currentUserName = currentUser.getUserName();
 		userDAO.updateUserRole(userName, role);
-		return "redirect:/users/admin";
+		return "redirect:/users/"+currentUserName;
 	}
 }

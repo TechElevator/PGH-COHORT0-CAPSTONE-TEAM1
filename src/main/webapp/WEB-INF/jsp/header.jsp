@@ -70,11 +70,11 @@
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
             <ul class="nav navbar-nav ml-auto">                   	
 					<c:if test="${not empty currentUser}">
-						<c:url var="mapPageHref" value="/users/${currentUser}" />
+						<c:url var="mapPageHref" value="/users/${currentUser.getUserName()}" />
 						<li class="nav-item">
 						<a class="nav-link" href="${mapPageHref}" id="navOptions"><span class="fas fa-map-marked-alt"></span> Coffee Bars Map</a></li>
 						
-						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
+						<c:url var="changePasswordHref" value="/users/${currentUser.getUserName()}/changePassword" />
 						<li class="nav-item">
 						<a class="nav-link" href="${changePasswordHref}" id="navOptions"><span class="fas fa-key"></span> Change Password</a></li>
 					</c:if>
@@ -104,7 +104,9 @@
 </nav>
 
 
-
+<script type="text/javascript">
+var dailyGrindPageRoot = '<c:url value="/"/>';
+</script>
 
 		
 		<div class="container-fluid h-100 justify-content-center align-items-center" id="form">

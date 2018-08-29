@@ -37,14 +37,14 @@
 				  globalPlace = place;
 				  $("#shopInfo").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center shopInfo'>" + globalPlace.name + 
 						  "</h2><p class='shopInfo'>"+ globalPlace.rating +"</br>" + globalPlace.formatted_phone_number + "</br>" +
-						  globalPlace.formatted_address + "</br" + "</p></div></div>");	   				  				  
+						  globalPlace.formatted_address + "</br" + "</p></div></div>");
 			  }
 		};
 
 		function populateCoffeeList() {
 			for (var i = 0; i < coffeeArray.length; i++) {
 				$("#coffees").append("<li>" + coffeeArray[i].coffeeName +    
-				"<a href='/reviewDetail?coffeeId=" + coffeeArray[i].coffeeId + "&coffeeName=" + coffeeArray[i].coffeeName + "'>See Reviews</a></li>");
+				"<a href='" + dailyGrindPageRoot + "reviewDetail?coffeeId=" + coffeeArray[i].coffeeId + "&coffeeName=" + coffeeArray[i].coffeeName + "'>See Reviews</a></li>");
 			}
 		};	
 	 

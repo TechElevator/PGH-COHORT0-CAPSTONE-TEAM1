@@ -87,8 +87,8 @@ public class UserController {
 		} else if (userRoll.equals("shopowner")) {
 
 			// return userRoll + "?placeId=" + userDAO.getShopId();
-			Place place = placeDAO.getPlaceByUserName(currentUser.getUserName());
-			request.setAttribute("place", place);
+			//Place place = placeDAO.getPlaceByUserName(currentUser.getUserName());
+			//request.setAttribute("place", place);
 			return "shopowner";
 			
 		} else if (userRoll.equals("admin")) {

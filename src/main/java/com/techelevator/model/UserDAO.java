@@ -13,13 +13,15 @@ public interface UserDAO {
 	public Object getUserByUserName(String userName);
 	
 	public String getUserRole(String userName);
-
-	long getUserId(String userName);
 	
 	public List<User> getAllUsers();
 	
 	public long getShopId();
 	
 	public void updateUserRole(String userName, String role);
+
+	public long getUserId(String userName);
+	
+	public void updateRoleToShopOwner(String userName);
 
 }

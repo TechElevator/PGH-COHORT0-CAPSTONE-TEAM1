@@ -123,5 +123,12 @@ public class JDBCUserDAO implements UserDAO {
 		user.setRole(result.getString("role"));
 		return user;
 	}
+
+	public void updateRoleToShopOwner(String userName) {
+	String sqlString = "UPDATE app_user SET role = 'shopowner' WHERE user_name = ?;";
+	jdbcTemplate.update(sqlString, userName);
+	}
+	
+	
 	
 }

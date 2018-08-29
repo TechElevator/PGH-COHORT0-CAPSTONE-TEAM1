@@ -32,7 +32,6 @@
  	</form>
 
 <!--
-	add coffee bean
 	add shop to review
 	change user role
 -->

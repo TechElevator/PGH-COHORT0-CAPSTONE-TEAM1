@@ -67,7 +67,8 @@ public class UserController {
 		} else if (userRoll.equals("coffeelover")) {
 			return "userPage";
 		} else if (userRoll.equals("shopowner")) {
-			return userRoll + "?placeId=" + userDAO.getShopId();
+			// return userRoll + "?placeId=" + userDAO.getShopId();
+			return userRoll;
 		} else if (userRoll.equals("admin")) {
 			List<User> allUsers = userDAO.getAllUsers();
 			request.setAttribute("allUsers", allUsers);

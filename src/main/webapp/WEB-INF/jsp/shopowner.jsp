@@ -2,6 +2,17 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h2>Shop Owner Page</h2>
+<h1>Shop Owner Page</h1>
+<h2>Your Shop Information</h2>
+<p>${place.coffeeShopName}</p>
+
+<!-- 
+	get request params: place id, user id
+	
+	form to add coffee beans
+	
+ -->
+ 
+ 
 
 <c:import url="/WEB-INF/jsp/header.jsp" />

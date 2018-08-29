@@ -97,7 +97,7 @@ public class JDBCUserDAO implements UserDAO {
 	@Override
 	public List<User> getAllUsers() {
 		List<User> allUsers = new ArrayList<>();
-		String sql = "SELECT user_name, role FROM app_user";
+		String sql = "SELECT user_name, role FROM app_user ORDER BY role";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 		while (result.next()) {
 			User user = mapRowToUser(result);

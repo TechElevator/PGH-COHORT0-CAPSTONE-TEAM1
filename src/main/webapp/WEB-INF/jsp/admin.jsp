@@ -2,8 +2,8 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h2></h2>
-<h2>Admin Page</h2>
+<h2> </h2>
+<h1>Admin Page</h1>
  
  <h2>Daily Grind Users</h2>
  <ul>
@@ -32,7 +32,6 @@
  	</form>
 
 <!--
-	add coffee bean
 	add shop to review
 	change user role
 -->

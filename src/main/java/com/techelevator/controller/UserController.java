@@ -30,8 +30,9 @@ public class UserController {
 	private PlaceDAO placeDAO;
 
 	@Autowired
-	public UserController(UserDAO userDAO) {
+	public UserController(UserDAO userDAO, PlaceDAO placeDAO) {
 		this.userDAO = userDAO;
+		this.placeDAO = placeDAO;
 	}
 	
 	@RequestMapping(path= {"/", "/homepage"}, method=RequestMethod.GET)
@@ -82,8 +83,8 @@ public class UserController {
 		} else if (userRoll.equals("shopowner")) {
 
 			// return userRoll + "?placeId=" + userDAO.getShopId();
-			Place place = placeDAO.getPlaceByUserName(currentUser.getUserName());
-			request.setAttribute("place", place);
+			List<Place> allPlaces = placeDAO.getAllPlacesByUserName(userName);
+			request.setAttribute("allPlaces", allPlaces);
 			return "shopowner";
 			
 		} else if (userRoll.equals("admin")) {

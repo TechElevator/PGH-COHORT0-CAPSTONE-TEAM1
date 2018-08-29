@@ -12,6 +12,6 @@ public interface PlaceDAO {
 	
 	public void updatePlace(Place place);
 	
-	public Place getPlaceByUserName(String userName);
+	public List<Place> getAllPlacesByUserName(String userName);
 		
 }

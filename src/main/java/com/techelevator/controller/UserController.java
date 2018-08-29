@@ -103,4 +103,16 @@ public class UserController {
 		userDAO.updateUserRole(userName, role);
 		return "redirect:/users/"+currentUserName;
 	}
+	
+	@RequestMapping(path="/users/updateCoffee", method=RequestMethod.POST)
+	public String updateCoffeeBeans(@RequestParam String coffeeName,
+									@RequestParam String origin,
+									@RequestParam String roaster,
+									@RequestParam String detail,
+									@RequestParam String coffeeShopName,
+									HttpSession session) {
+		User currentUser = (User) session.getAttribute("currentUser");
+		String currentUserName = currentUser.getUserName();
+		return "redirect:/users/"+currentUserName;
+	}
 }

@@ -115,7 +115,7 @@ public class UserController {
 		return "redirect:/users/"+currentUserName;
 	}
 	
-	@RequestMapping(path="/addPlace", method=RequestMethod.POST)
+	@RequestMapping(path="/users/addPlace", method=RequestMethod.POST)
 	public String addPlace(@RequestParam String name, @RequestParam String place_id, HttpSession session) {
 		Place placeToAdd = new Place();
 		placeToAdd.setGooglePlaceId(place_id);

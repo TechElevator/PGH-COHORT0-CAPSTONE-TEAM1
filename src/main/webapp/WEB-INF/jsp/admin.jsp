@@ -36,7 +36,7 @@
 		<input type="text" name="name" placeholder="name of shop"/>
  		</p>
  		<p>Place's id
- 		 <input type="text" name="id" placeholder="the google place_id of the shop"/></p>
+ 		 <input type="text" name="place_id" placeholder="the google place_id of the shop"/></p>
  		<input type="submit" name="submitbtn" value="Submit" />
  	</form>
 <!--

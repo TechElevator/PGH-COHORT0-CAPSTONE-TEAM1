@@ -32,6 +32,7 @@ html,body {
 img {
 	width: 100%;
 	height: auto;
+	object-fit: fill;
 }
 
 /*
@@ -58,6 +59,29 @@ img {
 	text-align: center;
 	border-color:transparent;
 	margin: 0px;
+}
+
+/*
+~~~~~carousel~~~~~
+*/
+
+
+.carousel-item {
+    width: 100%; /*slider width*/
+    height: 100vh; /*slider height*/
+
+}
+.carousel-item img {
+    width: 100%; /*img width*/
+    
+}
+
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
 }
 
 /*
@@ -115,7 +139,7 @@ img {
 }
 
 #col4 {
-	background-image: url("../img/coffeevar2.jpg");
+	background-image: url("../img/coffeevar1.jpg");
 	background-position: center center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;

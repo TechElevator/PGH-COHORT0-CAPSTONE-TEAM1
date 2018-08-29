@@ -19,15 +19,14 @@ CREATE TABLE place(
 google_place_id text,
 coffee_shop_name varchar(256) NOT NULL,
 address varchar(256) NOT NULL,
-photo_reference text NOT NULL,
 constraint pk_place primary key(google_place_id)
 );
 
 CREATE TABLE coffee(
 coffee_id serial,
 coffee_name varchar(256) NOT NULL,
-origin varchar(256) NOT NULL,
-roaster varchar(256) NOT NULL,
+origin varchar(256),
+roaster varchar(256),
 detail text,
 constraint pk_coffee primary key(coffee_id)
 ); 

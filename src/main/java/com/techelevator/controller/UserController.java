@@ -115,6 +115,16 @@ public class UserController {
 		return "redirect:/users/"+currentUserName;
 	}
 	
+	@RequestMapping(path="/addPlace", method=RequestMethod.POST)
+	public String addPlace(@RequestParam String name, @RequestParam String place_id, HttpSession session) {
+		Place placeToAdd = new Place();
+		placeToAdd.setGooglePlaceId(place_id);
+		placeToAdd.setCoffeeShopName(name);
+		placeDAO.addPlace(placeToAdd);
+		
+		return "redirect:/users/" + session.getAttribute("currentUser");
+	}
+	
 	@RequestMapping(path="/users/updateCoffee", method=RequestMethod.POST)
 	public String updateCoffeeBeans(@RequestParam String coffeeName,
 									@RequestParam String origin,

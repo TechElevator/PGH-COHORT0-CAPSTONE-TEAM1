@@ -70,6 +70,24 @@ public class JDBCCoffeeDAO implements CoffeeDAO {
 		coffeeRow.setDetail(results.getString("detail"));
 		return coffeeRow;
 	}
+
+	@Override
+	public Coffee getCoffeeByCoffeeId(long coffeeId) {
+			Coffee coffee = new Coffee();
+			String sqlGetCoffeeById = "SELECT *\n" + 
+					"FROM coffee\n" + 
+					"WHERE coffee_id = ?;";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetCoffeeById, coffeeId);
+			if (!results.next()) {
+				return null;
+				//throw new Error("Did not find expected result");
+			}
+			coffee = mapRowToCoffee(results);
+			if (results.next()) {				
+				throw new Error("Found too many results");	
+			}			
+			return coffee;		
+	}
 	
 	
 }

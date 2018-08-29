@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.bouncycastle.util.encoders.Base64;
@@ -89,6 +92,36 @@ public class JDBCUserDAO implements UserDAO {
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlString, userName);
 		long userId = result.getLong("id");
 		return userId;
+	}
+	
+	@Override
+	public List<User> getAllUsers() {
+		List<User> allUsers = new ArrayList<>();
+		String sql = "SELECT user_name, role FROM app_user";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
+		while (result.next()) {
+			User user = mapRowToUser(result);
+			allUsers.add(user);
+		}
+		return allUsers;
+	}
+	
+	@Override
+	public void updateUserRole(String userName, String role) {
+		String sql = "UPDATE app_user SET role = ? WHERE user_name = ?";
+		jdbcTemplate.update(sql, role, userName);
+	}
+	
+	@Override
+	public long getShopId() {
+		return 0;
+	}
+	
+	private User mapRowToUser(SqlRowSet result) {
+		User user = new User();
+		user.setUserName(result.getString("user_name"));
+		user.setRole(result.getString("role"));
+		return user;
 	}
 	
 }

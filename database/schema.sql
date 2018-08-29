@@ -77,4 +77,16 @@ review_id int,
       ON UPDATE NO ACTION ON DELETE NO ACTION 
 );
 
+CREATE TABLE user_place(
+user_id int,
+google_place_id text,
+ CONSTRAINT pk_user_place PRIMARY KEY (user_id, google_place_id),
+  CONSTRAINT fkey_user_id FOREIGN KEY (user_id)
+      REFERENCES app_user (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT fkey_place_id FOREIGN KEY (google_place_id)
+      REFERENCES place (google_place_id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION 
+);
+
 COMMIT;

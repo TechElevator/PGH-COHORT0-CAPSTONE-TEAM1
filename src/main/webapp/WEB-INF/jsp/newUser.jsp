@@ -38,12 +38,12 @@
 </script>
 
 
+<div class="row" id="newUser">
+	<div class="col-sm-4"></div>
+	<div class="col-sm-4">
 <c:url var="formAction" value="/users" />
 <form method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
-	<div class="row" id="newUser">
-		<div class="col-sm-4"></div>
-		<div class="col-sm-4">
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />

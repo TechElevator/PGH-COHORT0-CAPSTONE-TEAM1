@@ -1,11 +1,24 @@
 html,body {
-	height:100%;
-	width:100%;
+	height:auto;
+	margin: 0;
+	padding: 0;
+	position: relative;
 }
 
 .container-fluid {
-	background-color:#DAA671;
 	padding: 0px;
+}
+
+/*covers primary container-fluid around header to footer*/
+#form{
+	/*linear-gradient(90deg, rgba(255,126,95,1) 0%, rgba(254,180,123,1) 100%);*/		
+	background-color: #f2f2f2; 
+	margin-top: 50px;	    
+    min-height: 95vh; /* will cover 95% of viewport */
+ 	overflow: hidden;
+ 	display: block;
+ 	position: relative;
+ 	padding-bottom: 100px; 
 }
 
 .well {
@@ -15,29 +28,24 @@ html,body {
 .shopInfo {
 	color:#DAA671;
 }
+
 img {
 	width: 100%;
-	height: auto;
+	height: 100vh;
 }
 
 /*
 ~~~~~ jumbotron ~~~~~
 */
 
-
-
 .vertical-center {
-	min-height: 100%;
 	min-height: 100vh;
 	
-	display: flex;
 	text-align: center;
-	justify-content: center;
-	align-items: center;
 }
 
 .jumbotron {	
-	background-image: url("../img/covfefe.jpg"); 
+	background-image: url("../img/jumbo9.jpg"); 
 	background-repeat: no-repeat;	
 	background-size: 100% 100%;
 	position: relative;
@@ -49,18 +57,37 @@ img {
 }
 
 /*
+~~~~~carousel~~~~~
+*/
+
+
+.carousel-item {
+    width: 100%; /*slider width*/
+    height: 100vh; /*slider height*/
+
+}
+.carousel-item img {
+    width: 100%; /*img width*/
+    
+}
+
+/*full width container*/
+@media (max-width: 767px) {
+    .block {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+}
+
+/*
 ~~~~~ navigation bar ~~~~~
 */
 
-#nav {
-	background-color: #8a898a;
-	opacity: 0.9;
-	filter:(opacity=70);
+#navbar {
+	background-color: #251f16;
+	opacity: 1;
+	filter:(opacity=90);
 	border-color: transparent;
-}
-
-#navOptions {
-	color: #b6744c;
 }
 
 #navtitle {
@@ -69,49 +96,10 @@ img {
 	font-family: 'Pacifico', cursive;
 }
 
-@media (min-width: 768px) {
-.navbar-brand.abs
-    {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
-}
-
-
 .abs-center-x {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.navbar-nav {
-	margin: 0px;
-}
-
-.navbar-nav.navbar-center{
-	position: relative;
-	left:50%;
-	vertical-align: center;
-}
-
-.navbar-inverse {
-	background: #2E2F31;
-	border: 0;
-}
-.navbar-inverse .navbar-nav li a {
-	color: #f7f7f7;
-	font-size: 16px;
-}
-.navbar-inverse .navbar-nav li a:hover {
-	background: #27A967;
-}
-
-.navbar-left {
-	background: #27A967;
-	color: #f7f7f7;
-	font-size: 16px;
 }
 
 /*
@@ -119,7 +107,7 @@ img {
 */
 
 #col1 {
-	background-image: url("../img/beans.jpg");
+	background-image: url("../img/shop1.jpg");
 	background-position: center center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -128,51 +116,71 @@ img {
 }
 
 #col2 {
-	background-color: #666867;
+	background-color: #e1eae7;
+	vertical-align: middle;
 	height: 300px;
-	padding:50px;
 }
 
-#map {
-		height:400px;
-		width:100%;
-	}
+#center {
+	position: absolute;
+  	top: 50%;
+  	left:50%;
+  	transform: translate(-50%,-50%);
+}
 
 #col3 {
 	background-color: #e1eae7;
 	height: 300px;
-	padding: 50px;
 }
 
 #col4 {
-	background-image: url("../img/coffee1.jpg");
+	background-image: url("../img/coffeevar1.jpg");
 	background-position: center center;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 300px;
-
 }
 
 /*
-~~~~~New User Jsp~~~~~
+~~~~~user form jsps ~~~~~
 */
 
-#form{
-	margin-top: 50px;
-
-}
-
 #newUser{
-	height: 400px;
-	padding-top: 100px;
+	height: auto;
+	padding-top: 75px;
 }
+
+/*
+~~~~~~javascript pages~~~~
+*/
+
+#map {
+		height:450px;
+		width:100%;
+	}
+	
+.well {
+	background-color:#312319;
+}
+
+.shopInfo {
+	color:#DAA671;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}	
 /*
 ~~~~~footer~~~~~
 */
 
 footer {
-	background-color: #909492;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #ffffff;
+	border-top: .5px solid black;
 	height: 100px;
-	margin: -10px;
-	padding: 0px;
+	
 }

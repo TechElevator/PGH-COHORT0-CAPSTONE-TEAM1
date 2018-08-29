@@ -39,7 +39,9 @@
     
     <!-- Uncomment the following datasource definition and provide the correct database name, username, and password
     	 to connect to a database -->
-	<!-- <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+
+	<!--<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url" value="jdbc:postgresql://localhost:5432/capstone" />
 		<property name="username" value="postgres" />
@@ -51,7 +53,9 @@
      <!--<tx:annotation-driven transaction-manager="txManager"/>
     <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
-    </bean>-->
+
+    </bean>
+	-->
 
 
     <beans profile="aws">
@@ -70,7 +74,7 @@
  	  <aws-context:instance-profile-credentials/>
  	</aws-context:context-credentials>
 	<aws-context:stack-configuration/>
-	<jdbc:data-source db-instance-identifier="CapstoneDB" password="${dbpassword}" read-replica-support="true"/>
+	<jdbc:data-source db-instance-identifier="CapstoneDB" password="password" read-replica-support="true"/>
       </beans>
     </beans>
 

@@ -14,8 +14,8 @@ public class DetailsController {
 	
 	@RequestMapping(path = "/shopDetail", method = RequestMethod.GET)
 	public String showShopDetail(HttpServletRequest request) {
-		String googlePlaceId = request.getParameter("googlePlaceId");
-		
+		//String googlePlaceId = request.getParameter("googlePlaceId");
+		//request.setAttribute("placeId", googlePlaceId);
 	
 		return "shopDetail";
 	}

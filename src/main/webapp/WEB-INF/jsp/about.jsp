@@ -24,9 +24,9 @@
 	
 	<div class="row">		
 		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" >
+        <h2>Marissa</h2>
+		<h5>Diva</h5>
         <img class="d-block w-100 h-100" src="img/pokemon1.png" alt="1st pokemon" style="border-radius:50%; background-color: white;">
-		<h2>Marissa</h2>
-		<h5>Bridezilla</h5>
 		</div>
 		<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12" >
         <img class="d-block w-100 h-100" src="img/gary.jpg" alt="1st pokemon" style="border-radius:50%; background-color: white;">

@@ -9,6 +9,7 @@
 <div id="shopsDisplay">
 	
 </div>
+
 <script type="text/javascript" src="../js/map.js">
     </script>
 <script async defer

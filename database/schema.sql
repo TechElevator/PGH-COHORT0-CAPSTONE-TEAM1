@@ -18,7 +18,6 @@ CREATE TABLE app_user (
 CREATE TABLE place(
 google_place_id text,
 coffee_shop_name varchar(256) NOT NULL,
-address varchar(256) NOT NULL,
 constraint pk_place primary key(google_place_id)
 );
 

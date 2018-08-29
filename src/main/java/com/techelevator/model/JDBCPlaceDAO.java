@@ -59,20 +59,18 @@ public class JDBCPlaceDAO implements PlaceDAO{
 	@Override
 	public void addPlace(Place place) {
 		String sqlAddPlace = "INSERT INTO place\n" + 
-				"(google_place_id, coffee_shop_name, address, photo_reference)\n" + 
-				"VALUES (?,?,?,?);";
-		jdbcTemplate.update(sqlAddPlace, place.getGooglePlaceId(), place.getCoffeeShopName(), 
-				place.getAddress(), place.getPhotoReference());
+				"(google_place_id, coffee_shop_name)\n" + 
+				"VALUES (?,?);";
+		jdbcTemplate.update(sqlAddPlace, place.getGooglePlaceId(), place.getCoffeeShopName());
 		
 	}
 
 	@Override
 	public void updatePlace(Place place) {
 		String sqlUpdatePlace = "UPDATE place\n" + 
-				"SET coffee_shop_name = ?, address = ?, photo_reference = ?\n" + 
+				"SET coffee_shop_name = ?\n" + 
 				"WHERE google_place_id = ?;";
-		jdbcTemplate.update(sqlUpdatePlace, place.getCoffeeShopName(), 
-				place.getAddress(), place.getPhotoReference(), place.getGooglePlaceId());
+		jdbcTemplate.update(sqlUpdatePlace, place.getCoffeeShopName(),place.getGooglePlaceId());
 		
 	}
 	
@@ -102,9 +100,7 @@ public class JDBCPlaceDAO implements PlaceDAO{
 	private Place mapRowToPlace(SqlRowSet results) {
 		Place placeRow = new Place();
 		placeRow.setGooglePlaceId(results.getString("google_place_id"));
-		placeRow.setCoffeeShopName(results.getString("coffee_shop_name"));
-		placeRow.setAddress(results.getString("address"));
-		placeRow.setPhotoReference(results.getString("photo_reference"));
+		placeRow.setCoffeeShopName(results.getString("coffee_shop_name"));		
 		return placeRow;
 	}
 	

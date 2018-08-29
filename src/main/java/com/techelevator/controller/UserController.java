@@ -1,10 +1,8 @@
 package com.techelevator.controller;
 
-<<<<<<< HEAD
+
 import java.util.List;
 
-=======
->>>>>>> 874459cf74cfaaca05a0163c8b4b1c7993aca1cc
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -74,17 +72,12 @@ public class UserController {
 			return "redirect:/";
 		} else if (userRoll.equals("coffeelover")) {
 			return "userPage";
-<<<<<<< HEAD
-		}else {
-			return userRoll;
-=======
 		} else if (userRoll.equals("shopowner")) {
 			return userRoll + "?placeId=" + userDAO.getShopId();
 		} else if (userRoll.equals("admin")) {
 			List<User> allUsers = userDAO.getAllUsers();
 			request.setAttribute("allUsers", allUsers);
 			return "admin";
->>>>>>> 0ac81aae492c619a0e039137ab4ceba6db08dc90
 		}
 		return "/";
 	}

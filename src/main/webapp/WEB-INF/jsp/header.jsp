@@ -10,6 +10,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 	    
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -40,18 +41,20 @@
 	</head>
 	<body> 	
 
-<nav class="navbar fixed-top navbar-dark navbar-expand-md justify-content-between" id="navbar" style="background-color: #8a898a">
-    <div class="container-fluid" id="navbar" style="background-color: #8a898a">
+<nav class="navbar fixed-top navbar-dark navbar-expand-md justify-content-between" id="navbar" >
+    <div class="container-fluid" id="navbar" >
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-nav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-collapse collapse dual-nav w-50 order-1 order-md-0">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link pl-0" href="/">Home <span class="sr-only">Map</span></a>
+                <li class="nav-item">
+                		<c:url var="homePageHref" value="/" />
+                    <a class="nav-link pl-0" href="${homePageHref}"><span class="fa fa-home"></span> Home<span class="sr-only">Map</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/">About</a>
+                		<c:url var="aboutPageHref" value="/about" />	
+                    <a class="nav-link" href="${aboutPageHref}"><span class="fa fa-user-circle"></span> About</a>
                 </li>               
             </ul>
         </div>
@@ -62,18 +65,10 @@
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
             <ul class="nav navbar-nav ml-auto">                   	
 					<c:if test="${not empty currentUser}">
-						<c:url var="dashboardHref" value="/users/${currentUser}" />
-						<li class="nav-item">
-						<a class="nav-link" href="${dashboardHref}" id="navOptions">Private Messages</a></li>
-						<c:url var="newMessageHref" value="/users/${currentUser}/messages/new" />
-						<li class="nav-item">
-						<a class="nav-link" href="${newMessageHref}" id="navOptions">New Message</a></li>
-						<c:url var="sentMessagesHref" value="/users/${currentUser}/messages" />
-						<li class="nav-item">
-						<a class="nav-link" href="${sentMessagesHref}" id="navOptions">Sent Messages</a></li>
+						
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
 						<li class="nav-item">
-						<a class="nav-link" href="${changePasswordHref}" id="navOptions">Change Password</a></li>
+						<a class="nav-link" href="${changePasswordHref}" id="navOptions"><span class="fas fa-key"></span> Change Password</a></li>
 					</c:if>
 			</ul>
 					
@@ -82,10 +77,10 @@
 						<c:when test="${empty currentUser}">
 							<c:url var="newUserHref" value="/users/new" />
 							<li class="nav-item">
-							<a class="nav-link" href="${newUserHref}" id="navOptions"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+							<a class="nav-link" href="${newUserHref}" id="navOptions"><span class="fa fa-user-plus"></span> Sign Up</a></li>
 							<c:url var="loginHref" value="/login" />
 							<li class="nav-item">
-							<a class="nav-link" href="${loginHref}" id="navOptions"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+							<a class="nav-link" href="${loginHref}" id="navOptions"><span class="fa fa-sign-in-alt"></span> Log In</a></li>
 						</c:when>
 						<c:otherwise>
 							<c:url var="logoutAction" value="/logout" />
@@ -104,5 +99,5 @@
 
 
 		
-		<div class="container-fluid h-100" id="form">
+		<div class="container-fluid h-100 justify-content-center align-items-center" id="form">
 

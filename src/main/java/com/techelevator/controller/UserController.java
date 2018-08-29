@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.model.Place;
+import com.techelevator.model.PlaceDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
 
@@ -25,6 +27,7 @@ import com.techelevator.model.UserDAO;
 public class UserController {
 
 	private UserDAO userDAO;
+	private PlaceDAO placeDAO;
 
 	@Autowired
 	public UserController(UserDAO userDAO) {
@@ -64,22 +67,31 @@ public class UserController {
 	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
 	public String displayUserPage(@PathVariable String userName, HttpSession session, HttpServletRequest request) {
+		
 		String userRoll = userDAO.getUserRole(userName);
+		
 		User currentUser = (User) session.getAttribute("currentUser");
+		
 		if (currentUser == null) {
 			return "redirect:/login";
 		} else if (!userName.equals(currentUser.getUserName())) {
 			return "redirect:/";
 		} else if (userRoll.equals("coffeelover")) {
 			return "userPage";
+			
 		} else if (userRoll.equals("shopowner")) {
+
 			// return userRoll + "?placeId=" + userDAO.getShopId();
-			return userRoll;
+			Place place = placeDAO.getPlaceByUserName(currentUser.getUserName());
+			request.setAttribute("place", place);
+			return "shopowner";
+			
 		} else if (userRoll.equals("admin")) {
 			List<User> allUsers = userDAO.getAllUsers();
 			request.setAttribute("allUsers", allUsers);
 			return "admin";
 		}
+		
 		return "/";
 	}
 	

@@ -75,6 +75,18 @@ public class JDBCPlaceDAO implements PlaceDAO{
 				place.getAddress(), place.getPhotoReference(), place.getGooglePlaceId());
 		
 	}
+	
+	public Place getPlaceByUserName(String userName) {
+		Place place = new Place();
+		String sql = "SELECT place.* FROM place "+
+					"JOIN user_place ON place.google_place_id = user_place.google_place_id "+
+					"JOIN app_user ON user_place.user_id = app_user.id WHERE app_user.user_name = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userName);
+		if (results.next()) {
+			place = mapRowToPlace(results);
+		}
+		return place;
+	}
 
 	private Place mapRowToPlace(SqlRowSet results) {
 		Place placeRow = new Place();

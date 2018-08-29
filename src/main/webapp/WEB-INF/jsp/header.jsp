@@ -55,7 +55,12 @@
                 <li class="nav-item">
                 		<c:url var="aboutPageHref" value="/about" />	
                     <a class="nav-link" href="${aboutPageHref}"><span class="fa fa-user-circle"></span> About</a>
+                </li>
+                <li class="nav-item">
+                		<c:url var="eventPageHref" value="/event" />	
+                    <a class="nav-link" href="${eventPageHref}"><span class="fas fa-calendar-alt"></span> Events</a>
                 </li>               
+                               
             </ul>
         </div>
         
@@ -65,6 +70,9 @@
         <div class="navbar-collapse collapse dual-nav w-50 order-2">
             <ul class="nav navbar-nav ml-auto">                   	
 					<c:if test="${not empty currentUser}">
+						<c:url var="mapPageHref" value="/users/${currentUser}" />
+						<li class="nav-item">
+						<a class="nav-link" href="${mapPageHref}" id="navOptions"><span class="fas fa-map-marked-alt"></span> Coffee Bars Map</a></li>
 						
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
 						<li class="nav-item">

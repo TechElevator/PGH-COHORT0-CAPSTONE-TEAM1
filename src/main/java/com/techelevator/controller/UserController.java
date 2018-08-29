@@ -40,6 +40,11 @@ public class UserController {
 	public String displayAboutPage() {
 		return "about";
 	}
+	
+	@RequestMapping(path="/event", method=RequestMethod.GET)
+	public String displayEventPage() {
+		return "event";
+	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
 	public String displayNewUserForm(ModelMap modelHolder) {

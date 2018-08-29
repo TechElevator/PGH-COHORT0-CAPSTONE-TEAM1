@@ -31,8 +31,7 @@ html,body {
 
 img {
 	width: 100%;
-	height: auto;
-	object-fit: fill;
+	height: 100vh;
 }
 
 /*
@@ -40,17 +39,13 @@ img {
 */
 
 .vertical-center {
-	min-height: 100%;
 	min-height: 100vh;
 	
-	display: flex;
 	text-align: center;
-	justify-content: center;
-	align-items: center;
 }
 
 .jumbotron {	
-	background-image: url("../img/jumbo1.jpg"); 
+	background-image: url("../img/jumbo9.jpg"); 
 	background-repeat: no-repeat;	
 	background-size: 100% 100%;
 	position: relative;

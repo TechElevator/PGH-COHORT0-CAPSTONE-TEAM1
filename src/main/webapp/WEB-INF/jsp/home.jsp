@@ -18,26 +18,34 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/jumbo1.jpg" alt="First slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/jumbo2.jpg" alt="Second slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span> 
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/jumbo3.jpg" alt="Third slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/jumbo4.jpg" alt="Fourth slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>
     <div class="carousel-item">
       <img class="d-block w-100" src="img/jumbo5.jpg" alt="Fifth slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>      
     </div>    
     <div class="carousel-item">
       <img class="d-block w-100" src="img/jumbo6.jpg" alt="Sixth slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>      
     </div>    
     <div class="carousel-item">
       <img class="d-block w-100" src="img/jumbo7.jpg" alt="Seventh slide">
+      <span style="font-family: 'Pacifico', cursive; font-size: 75px; text-align: center; color: white" id="center">Mapping Pittsburgh's Coffee Bars</span>
     </div>    
   </div>
+  
   <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>

@@ -2,6 +2,7 @@ package com.techelevator.model;
 
 import java.util.List;
 
+
 public interface CoffeeDAO {
 
 	public List<Coffee> getCoffeeOffered(String googlePlaceId);

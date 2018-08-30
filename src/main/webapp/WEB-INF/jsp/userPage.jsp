@@ -3,9 +3,9 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 
-<h2 class="text-center">Welcome, ${userName}</h2>
+<h2 class="text-center shopInfo">Welcome, ${userName}</h2>
 <div id="map"></div>
-<h1 class='text-center'><i class="fa fa-coffee"></i> Coffee Radar Results <i class="fa fa-coffee"></i></h1>
+<h1 class='text-center shopInfo'><i class="fa fa-coffee"></i> Coffee Radar Results <i class="fa fa-coffee"></i></h1>
 <div id="shopsDisplay">
 	
 </div>

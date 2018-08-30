@@ -6,13 +6,22 @@
 <h1>Admin Page</h1>
  
  <h2>Daily Grind Users</h2>
- <ul>
+ <table>
+ 	<tr>
+ 		<th>Username</th>
+ 		<th>Role</th>
+ 	</tr>
+ 	
  	<c:forEach var="user" items="${requestScope.allUsers}">
-		<li>${user.userName}, ${user.role}</li>
+ 		<tr>
+			<td>${user.userName}</td>
+			<td>${user.role}</td>
+		</tr>
 	</c:forEach>
- </ul>
+ </table>
  <h2>Update User Role</h2>
  	<form method="POST" action="updateUser">
+ 	<p class="text-info">If you are adding a shop to an account that has already been granted 'shopowner' privileges it is important to re-confirm their auth level by selecting 'shopowner' role again when associating new shops with the account in question.</p>
  		<p>User Name
 		<select name="userName">
 				<option>Select User</option>
@@ -39,12 +48,13 @@
  		<input type="submit" name="submitbtn" value="Submit" />
  	</form>
 
+	<h2>Add new coffee shop to database:</h2>
 	<form method="POST" action="addPlace">
- 		<p>Add a place
-		<input type="text" name="name" placeholder="name of shop"/>
+ 		<p>Name:
+		<input type="text" name="name" placeholder="shop name"/>
  		</p>
- 		<p>Place's id
- 		 <input type="text" name="place_id" placeholder="the google place_id of the shop"/></p>
+ 		<p>Google place_id:
+ 		 <input type="text" name="place_id" placeholder="google place_id"/></p>
  		<input type="submit" name="submitbtn" value="Submit" />
  	</form>
 <!--

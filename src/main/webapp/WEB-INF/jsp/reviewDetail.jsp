@@ -6,7 +6,7 @@
 <body>
 
 		<c:url var="formAction" value="/reviewDetail" />
-		<form method="POST" action="${formAction}">
+		<form method="POST" action="${formAction}" style='background-color:grey'>
 		<h3>Leave a review!</h3>
 		<div>
 			<label for="rating">Rating:</label> 
@@ -31,10 +31,13 @@
 		<input class="formSubmitButton" type="submit" value="Submit" />
 
 	</form>
-		
-	
+	<div class='well'>
+		<h3 class='shopInfo'>About This Coffee</h3>
 	<div id="coffeeInfo"></div>
+	<h3 class='shopInfo'>Submitted Reviews</h3>
 	<ul id="reviews"></ul>
+	</div>	
+
 
 </body>
 
@@ -52,13 +55,13 @@
 						
 						function populateReviewList() {
 							for (var i = 0; i < reviewArray.length; i++) {
-								$("#reviews").append("<li>" + reviewArray[i].detail + "</li>");
+								$("#reviews").append("<li class='shopInfo'>" + reviewArray[i].rating + " out of 5 Stars - " + reviewArray[i].detail + "</li>");
 							}
 						};	
 						
 						function listCoffeeData(){
-							$("#coffeeInfo").append("<p class='shopInfo'>"+ globalCoffee.coffeeName +"</br>" +
-								globalCoffee.origin + "</br>" + globalCoffee.roaster + "</br>" + globalCoffee.detail + "</p>");
+							$("#coffeeInfo").append("<p class='shopInfo'>Name: "+ globalCoffee.coffeeName +"</br>Origin: " +
+								globalCoffee.origin + "</br>Roaster: " + globalCoffee.roaster + "</br>Details: " + globalCoffee.detail + "</p>");
 						};
 																						
 						$.ajax({

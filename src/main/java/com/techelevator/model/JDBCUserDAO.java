@@ -86,7 +86,7 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public long getUserId(String userName) {
+	public long getUserIdByName(String userName) {
 		String sqlString = "SELECT id FROM app_user WHERE user_name = ?";
 		long userId = 0;
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlString, userName);	
@@ -130,7 +130,7 @@ public class JDBCUserDAO implements UserDAO {
 	@Override
 	public void assignUserToShop (String googlePlaceIdea, String userName) {
 	String sqlString = "INSERT INTO user_place (user_id, google_place_id) VALUES (?,?);";
-	long userId = getUserId(userName);
+	long userId = getUserIdByName(userName);
 	jdbcTemplate.update(sqlString, userId, googlePlaceIdea);
 	}
 		

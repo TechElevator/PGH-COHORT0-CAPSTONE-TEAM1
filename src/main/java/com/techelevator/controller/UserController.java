@@ -100,7 +100,9 @@ public class UserController {
 			
 		} else if (userRoll.equals("admin")) {
 			List<User> allUsers = userDAO.getAllUsers();
+			List<Place> allPlaces = placeDAO.getAllPlaces();
 			request.setAttribute("allUsers", allUsers);
+			request.setAttribute("allPlaces", allPlaces);
 			return "admin";
 		}
 		
@@ -108,10 +110,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users/updateUser", method=RequestMethod.POST)
-	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, HttpSession session) {
+	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, @RequestParam String shop, HttpSession session) {
 		User currentUser = (User) session.getAttribute("currentUser");
-		String currentUserName = currentUser.getUserName();
+		String currentUserName = userName;
+		if (!shop.equals("Select a Shop")) {
+			userDAO.assignUserToShop(shop, currentUserName);
+		}
+		
 		userDAO.updateUserRole(userName, role);
+		
 		return "redirect:/users/"+currentUserName;
 	}
 	

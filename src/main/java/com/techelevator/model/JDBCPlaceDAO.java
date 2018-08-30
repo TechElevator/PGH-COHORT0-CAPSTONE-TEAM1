@@ -39,6 +39,19 @@ public class JDBCPlaceDAO implements PlaceDAO{
 		
 		return place;
 	}
+	
+	@Override
+	public List<Place> getAllPlaces() {
+		ArrayList<Place> places = new ArrayList<Place>();
+		String sqlGetAllPlaces = "SELECT * FROM place";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllPlaces);
+		while (results.next()) {
+			Place thePlace = mapRowToPlace(results);
+			places.add(thePlace);
+		}
+		
+		return places;
+	}
 
 	@Override
 	public List<Place> getPlacesSellingCoffeeById(long coffeeId) {
@@ -74,6 +87,7 @@ public class JDBCPlaceDAO implements PlaceDAO{
 		
 	}
 	
+	@Override
 	public List<Place> getAllPlacesByUserName(String userName) {
 		List<Place> allPlaces = new ArrayList<>();
 		String sql = "SELECT place.* FROM place\n" + 
@@ -87,6 +101,8 @@ public class JDBCPlaceDAO implements PlaceDAO{
 		return allPlaces;
 	}
 	
+	
+	@Override
 	public String getPlaceIdByName(String shopName) {
 		String googlePlaceId = "";
 		String sql = "SELECT google_place_id FROM place WHERE coffee_shop_name = ?";

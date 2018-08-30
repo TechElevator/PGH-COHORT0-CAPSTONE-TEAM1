@@ -15,9 +15,7 @@ public interface UserDAO {
 	public String getUserRole(String userName);
 	
 	public List<User> getAllUsers();
-	
-	public long getShopId();
-	
+		
 	public void updateUserRole(String userName, String role);
 
 	public long getUserId(String userName);

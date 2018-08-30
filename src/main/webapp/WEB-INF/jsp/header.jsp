@@ -74,9 +74,9 @@
 						<li class="nav-item">
 						<a class="nav-link" href="${mapPageHref}" id="navOptions"><span class="fas fa-map-marked-alt"></span> Coffee Bars Map</a></li>
 						
-						<c:url var="changePasswordHref" value="/users/${currentUser.getUserName()}/changePassword" />
+						<c:url var="detailPageHref" value="/users/${currentUser.getUserName()}/shopDetail" />
 						<li class="nav-item">
-						<a class="nav-link" href="${changePasswordHref}" id="navOptions"><span class="fas fa-key"></span> Change Password</a></li>
+						<a class="nav-link" href="${detailPageHref}" id="navOptions"><span class="fas fa-info-circle"></span> Coffee Bars Info</a></li>
 					</c:if>
 			</ul>
 					

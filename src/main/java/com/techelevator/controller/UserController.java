@@ -100,7 +100,9 @@ public class UserController {
 			
 		} else if (userRoll.equals("admin")) {
 			List<User> allUsers = userDAO.getAllUsers();
+			List<Place> allPlaces = placeDAO.getAllPlaces();
 			request.setAttribute("allUsers", allUsers);
+			request.setAttribute("allPlaces", allPlaces);
 			return "admin";
 		}
 		
@@ -112,6 +114,7 @@ public class UserController {
 		User currentUser = (User) session.getAttribute("currentUser");
 		String currentUserName = currentUser.getUserName();
 		userDAO.updateUserRole(userName, role);
+		//update tables with place id and username
 		return "redirect:/users/"+currentUserName;
 	}
 	

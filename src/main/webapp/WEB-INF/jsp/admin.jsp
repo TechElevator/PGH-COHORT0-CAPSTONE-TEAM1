@@ -28,6 +28,14 @@
   			<option value="shopowner">Shop Owner</option>
   			<option value="admin">Admin</option>
 		</select></p>
+		<p>Connect a shop to the account?
+		<select name="shop">
+				<option>Select a Shop</option>
+			<c:forEach var="shop" items="${requestScope.allPlaces}">
+				<option value="${shop.googlePlaceId}">${shop.coffeeShopName}</option>
+			</c:forEach>
+		</select>
+ 		</p>
  		<input type="submit" name="submitbtn" value="Submit" />
  	</form>
 

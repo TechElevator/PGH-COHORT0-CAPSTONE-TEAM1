@@ -3,6 +3,7 @@ package com.techelevator.model;
 import java.util.List;
 
 public interface PlaceDAO {
+	public List<Place> getAllPlaces();
 
 	public Place getPlaceById(String googlePlaceId);
 	

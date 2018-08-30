@@ -39,6 +39,19 @@ public class JDBCPlaceDAO implements PlaceDAO{
 		
 		return place;
 	}
+	
+	@Override
+	public List<Place> getAllPlaces() {
+		ArrayList<Place> places = new ArrayList<Place>();
+		String sqlGetAllPlaces = "SELECT * FROM place";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllPlaces);
+		while (results.next()) {
+			Place thePlace = mapRowToPlace(results);
+			places.add(thePlace);
+		}
+		
+		return places;
+	}
 
 	@Override
 	public List<Place> getPlacesSellingCoffeeById(long coffeeId) {

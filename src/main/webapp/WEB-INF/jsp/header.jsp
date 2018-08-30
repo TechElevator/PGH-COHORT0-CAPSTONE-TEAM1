@@ -91,11 +91,14 @@
 							<a class="nav-link" href="${loginHref}" id="navOptions"><span class="fa fa-sign-in-alt"></span> Log In</a></li>
 						</c:when>
 						<c:otherwise>
+						<li class="nav-item">
 							<c:url var="logoutAction" value="/logout" />
 							<form id="logoutForm" action="${logoutAction}" method="POST">
 							<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
+							<a class="nav-link" id="logoutLink" onclick="document.getElementById('logoutForm').submit();">Log Out</a>
 							</form>
-							<li class="nav-item"><a class="nav-link" id="logoutLink" href="#">Log Out</a></li>
+							
+							</li>
 						</c:otherwise>
 					</c:choose>			
             </ul>

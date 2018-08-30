@@ -5,7 +5,35 @@
 
 <body>
 
-	<div id="coffeeInfo">YOU MADE IT</div>
+		<c:url var="formAction" value="/reviewDetail" />
+		<form method="POST" action="${formAction}">
+		<h3>Leave a review!</h3>
+		<div>
+			<label for="rating">Rating:</label> 
+			<select name="rating" id="rating">
+				<option value="5">Five Stars</option>
+				<option value="4">Four Stars</option>
+				<option value="3">Three Stars</option>
+				<option value="2">Two Stars</option>
+				<option value="1">One Star</option>
+
+			</select>
+		</div>
+		
+		<div>
+			<label for="details">Details</label> <input
+				type="text" name="details" id="details" />
+		</div>
+
+	
+		<input type="hidden" value=${param["coffeeId"]} name="coffeeId" />
+
+		<input class="formSubmitButton" type="submit" value="Submit" />
+
+	</form>
+		
+	
+	<div id="coffeeInfo"></div>
 	<ul id="reviews"></ul>
 
 </body>

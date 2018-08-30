@@ -112,8 +112,8 @@ public class UserController {
 	@RequestMapping(path="/users/updateUser", method=RequestMethod.POST)
 	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, @RequestParam String shop, HttpSession session) {
 		User currentUser = (User) session.getAttribute("currentUser");
-		String currentUserName = currentUser.getUserName();
-		if (!shop.equals("")) {
+		String currentUserName = userName;
+		if (!shop.equals("Select a Shop")) {
 			userDAO.assignUserToShop(shop, currentUserName);
 		}
 		

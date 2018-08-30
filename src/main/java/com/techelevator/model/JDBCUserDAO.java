@@ -71,7 +71,6 @@ public class JDBCUserDAO implements UserDAO {
 			thisUser.setUserName(user.getString("user_name"));
 			thisUser.setPassword(user.getString("password"));
 		}
-
 		return thisUser;
 	}
 	
@@ -112,11 +111,6 @@ public class JDBCUserDAO implements UserDAO {
 		jdbcTemplate.update(sql, role, userName);
 	}
 	
-	@Override
-	public long getShopId() {
-		return 0;
-	}
-	
 	private User mapRowToUser(SqlRowSet result) {
 		User user = new User();
 		user.setUserName(result.getString("user_name"));
@@ -124,11 +118,13 @@ public class JDBCUserDAO implements UserDAO {
 		return user;
 	}
 
+	@Override
 	public void updateRoleToShopOwner(String userName) {
 	String sqlString = "UPDATE app_user SET role = 'shopowner' WHERE user_name = ?;";
 	jdbcTemplate.update(sqlString, userName);
 	}
 	
+	@Override
 	public void assignUserToShop (String googlePlaceIdea, String userName) {
 	String sqlString = "INSERT INTO user_place (user_id, google_place_id) VALUES (?,?);";
 	long userId = getUserId(userName);

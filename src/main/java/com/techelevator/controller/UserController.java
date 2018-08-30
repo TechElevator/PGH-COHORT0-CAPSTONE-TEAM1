@@ -110,11 +110,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users/updateUser", method=RequestMethod.POST)
-	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, HttpSession session) {
+	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, @RequestParam String shop, HttpSession session) {
 		User currentUser = (User) session.getAttribute("currentUser");
 		String currentUserName = currentUser.getUserName();
+		if (!shop.equals("")) {
+			userDAO.assignUserToShop(shop, currentUserName);
+		}
+		
 		userDAO.updateUserRole(userName, role);
-		//update tables with place id and username
+		
 		return "redirect:/users/"+currentUserName;
 	}
 	

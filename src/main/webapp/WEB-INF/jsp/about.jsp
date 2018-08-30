@@ -8,7 +8,7 @@
 		<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12" ></div>
 		<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
 			<h1 style="font-family: 'Pacifico', cursive;">About</h1>
-			<h2>This project was made unwillingly and with a gun to our head in order to fulfill a requirement for Tech Elevator graduation.</br></br></h2>
+			<h2>This project was made in order to fulfill a requirement for Tech Elevator graduation. :/</br></br></h2>
 		</div>
 		<div class="col-lg-1 col-md-1 col-sm-12 col-xs-12" ></div>
 		

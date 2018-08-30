@@ -6,7 +6,8 @@
 <body>
 
 	<div id='map' style='height: 0px'></div>
-	<div id="shopInfo">YOU MADE IT</div>
+	<div id="shopInfo"></div>
+	<h2 class='shopInfo'>Coffees seen at this cafe:</h2>
 	<ul id="coffees"></ul>
 
 </body>
@@ -35,16 +36,16 @@
 		function callback(place, status) {
 			  if (status == google.maps.places.PlacesServiceStatus.OK) {
 				  globalPlace = place;
-				  $("#shopInfo").append("<div class='row shop well'><div class='col-md-6'><h2 class='text-center shopInfo'>" + globalPlace.name + 
-						  "</h2><p class='shopInfo'>"+ globalPlace.rating +"</br>" + globalPlace.formatted_phone_number + "</br>" +
+				  $("#shopInfo").append("<div class='row shop well center-block'><div class='col-xl-12'><h2 class='text-center shopInfo'>" + globalPlace.name + 
+						  "</h2></div></div><div class='row shop well center-block'><div class='col-xl-12'><p class='shopInfo text-center'>Rating (1-5): "+ globalPlace.rating +"</br>Contact: " + globalPlace.formatted_phone_number + "</br>Address: " +
 						  globalPlace.formatted_address + "</br" + "</p></div></div>");
 			  }
 		};
 
 		function populateCoffeeList() {
 			for (var i = 0; i < coffeeArray.length; i++) {
-				$("#coffees").append("<li>" + coffeeArray[i].coffeeName +    
-				"<a href='" + dailyGrindPageRoot + "reviewDetail?coffeeId=" + coffeeArray[i].coffeeId + "&coffeeName=" + coffeeArray[i].coffeeName + "'>See Reviews</a></li>");
+				$("#coffees").append("<li class='shopInfo'>" + coffeeArray[i].coffeeName +    
+				" <a href='" + dailyGrindPageRoot + "reviewDetail?coffeeId=" + coffeeArray[i].coffeeId + "&coffeeName=" + coffeeArray[i].coffeeName + "'>See Reviews</a></li>");
 			}
 		};	
 	 

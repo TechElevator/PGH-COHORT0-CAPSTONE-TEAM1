@@ -79,11 +79,7 @@
 			  });		  			
 			  
 			});	
-			
-			
-			
-			
-			
+				
 			</script>
 
 <script async defer

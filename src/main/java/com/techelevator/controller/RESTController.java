@@ -47,11 +47,11 @@ public class RESTController {
 		coffee = coffeeDAO.getCoffeeByCoffeeId(coffeeId);
 		return coffee;
 	}
-	
+		
 	@RequestMapping(value = "API/placeList/byGoogleId/{googlePlaceId}", method = RequestMethod.GET, produces = "application/json")
 	public Place getPlacesByGoogleIdJSON(@PathVariable String googlePlaceId) {
 		place = placeDAO.getPlaceById(googlePlaceId);
-		return place;
+		return place;	
 	}
 	
 	@RequestMapping(value = "API/placeList/byCoffeeId/{coffeeId}", method = RequestMethod.GET, produces = "application/json")

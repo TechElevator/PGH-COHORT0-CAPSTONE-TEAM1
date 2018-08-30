@@ -27,6 +27,11 @@
 								$("#reviews").append("<li>" + reviewArray[i].detail + "</li>");
 							}
 						};	
+						
+						function listCoffeeData(){
+							$("#coffeeInfo").append("<p class='shopInfo'>"+ globalCoffee.coffeeName +"</br>" +
+								globalCoffee.origin + "</br>" + globalCoffee.roaster + "</br>" + globalCoffee.detail + "</p>");
+						};
 																						
 						$.ajax({
 								url : 'API/coffeeList/byCoffeeId/' + coffeeId,
@@ -36,6 +41,7 @@
 								success : function(data) {
 									globalCoffee = data;
 									console.log(globalCoffee);
+									listCoffeeData();
 								},
 								statusCode : {
 									200 : function() {
@@ -64,19 +70,9 @@
 						       		}       
 						        }	
 						  });	
-		
-		
-		
-		
-		
-		
-		
+						
 		});
-		
-		
+				
 </script>
-
-
-
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

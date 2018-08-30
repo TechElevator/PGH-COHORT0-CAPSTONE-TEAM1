@@ -126,4 +126,8 @@ INSERT INTO place_coffee (google_place_id, coffee_id) VALUES
 ('ChIJoYdANg_0NIgRPb8Dh39XL-Y', 12),
 ('ChIJoYdANg_0NIgRPb8Dh39XL-Y', 13);
 
+INSERT INTO app_user (user_name, password, role, salt) VALUES
+('admin', 'nRWpwtEpSXEVJaYJKUa5eA==', 'admin', 'boQ1w50VqlsTD86UiKOcM5heriywM0a1XFhgeOy3GbnR9mKeJUQujniv5Ge+sm8Pqojih5nPtUK8IZPfqyeF4nIF4PONiejuLftYFC+FdTG+N0yjltRcMAfqXBbv9FQwKQMwxLzGR6xygaUbK2NTtH4rtXnXbmqwLSSFDofl68U='),
+('shopowner', 'bb/Y6z6TzVnplQ8qWiwBZA==', 'shopowner', 'oXUEz6Y2hu0DfLalQQ6zA+Wu+gAntHeXBiQk7CHnqQcvWP0AcrUKYRaQ6iAH7MPkPohaUsegBteqPmpELQk+ox+IsbvsYjYq+PJ9f2FL8Q/TG5rLsKwzNRgNyTnr2YlRZq8q54kLfbve15o9IOXSK0dylLQvTU5kYSjn2IDVHoo='),
+('user','xpjC0dPjYBw3ukcx1bRXxg==', 'coffeelover', 'ggZx2hfBD3TvoCwyV+oOC2vnseRvtEgNSLCUersbIpJUljdE1QvZT0BcVHzJ/LNuiyOpL4ttNVZyGl7vhPkKugRA9A6IiOW0MByiNBEZXMpqhaLP9ccl0JCYTiEFSuYO7NcfbO9KGWYQX4AgVsLrwxWvMGhD6PCIfALBlRDN6II=');
 COMMIT;

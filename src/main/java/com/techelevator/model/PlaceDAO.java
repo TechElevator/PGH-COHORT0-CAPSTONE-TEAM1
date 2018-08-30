@@ -3,6 +3,7 @@ package com.techelevator.model;
 import java.util.List;
 
 public interface PlaceDAO {
+	public List<Place> getAllPlaces();
 
 	public Place getPlaceById(String googlePlaceId);
 	
@@ -12,6 +13,8 @@ public interface PlaceDAO {
 	
 	public void updatePlace(Place place);
 	
-	public Place getPlaceByUserName(String userName);
+	public List<Place> getAllPlacesByUserName(String userName);
+	
+	public String getPlaceIdByName(String shopName);
 		
 }

@@ -39,6 +39,19 @@ public class JDBCPlaceDAO implements PlaceDAO{
 		
 		return place;
 	}
+	
+	@Override
+	public List<Place> getAllPlaces() {
+		ArrayList<Place> places = new ArrayList<Place>();
+		String sqlGetAllPlaces = "SELECT * FROM place";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllPlaces);
+		while (results.next()) {
+			Place thePlace = mapRowToPlace(results);
+			places.add(thePlace);
+		}
+		
+		return places;
+	}
 
 	@Override
 	public List<Place> getPlacesSellingCoffeeById(long coffeeId) {
@@ -59,41 +72,51 @@ public class JDBCPlaceDAO implements PlaceDAO{
 	@Override
 	public void addPlace(Place place) {
 		String sqlAddPlace = "INSERT INTO place\n" + 
-				"(google_place_id, coffee_shop_name, address, photo_reference)\n" + 
-				"VALUES (?,?,?,?);";
-		jdbcTemplate.update(sqlAddPlace, place.getGooglePlaceId(), place.getCoffeeShopName(), 
-				place.getAddress(), place.getPhotoReference());
+				"(google_place_id, coffee_shop_name)\n" + 
+				"VALUES (?,?);";
+		jdbcTemplate.update(sqlAddPlace, place.getGooglePlaceId(), place.getCoffeeShopName());
 		
 	}
 
 	@Override
 	public void updatePlace(Place place) {
 		String sqlUpdatePlace = "UPDATE place\n" + 
-				"SET coffee_shop_name = ?, address = ?, photo_reference = ?\n" + 
+				"SET coffee_shop_name = ?\n" + 
 				"WHERE google_place_id = ?;";
-		jdbcTemplate.update(sqlUpdatePlace, place.getCoffeeShopName(), 
-				place.getAddress(), place.getPhotoReference(), place.getGooglePlaceId());
+		jdbcTemplate.update(sqlUpdatePlace, place.getCoffeeShopName(),place.getGooglePlaceId());
 		
 	}
 	
-	public Place getPlaceByUserName(String userName) {
-		Place place = new Place();
-		String sql = "SELECT place.* FROM place "+
-					"JOIN user_place ON place.google_place_id = user_place.google_place_id "+
-					"JOIN app_user ON user_place.user_id = app_user.id WHERE app_user.user_name = ?";
+	@Override
+	public List<Place> getAllPlacesByUserName(String userName) {
+		List<Place> allPlaces = new ArrayList<>();
+		String sql = "SELECT place.* FROM place\n" + 
+				"JOIN user_place on place.google_place_id = user_place.google_place_id\n" + 
+				"JOIN app_user on user_place.user_id = app_user.id WHERE app_user.user_name = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userName);
-		if (results.next()) {
-			place = mapRowToPlace(results);
+		while (results.next()) {
+			Place place = mapRowToPlace(results);
+			allPlaces.add(place);
 		}
-		return place;
+		return allPlaces;
+	}
+	
+	
+	@Override
+	public String getPlaceIdByName(String shopName) {
+		String googlePlaceId = "";
+		String sql = "SELECT google_place_id FROM place WHERE coffee_shop_name = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sql, shopName);
+		while (results.next()) {
+			googlePlaceId = results.getString("google_place_id");
+		}
+		return googlePlaceId;
 	}
 
 	private Place mapRowToPlace(SqlRowSet results) {
 		Place placeRow = new Place();
 		placeRow.setGooglePlaceId(results.getString("google_place_id"));
-		placeRow.setCoffeeShopName(results.getString("coffee_shop_name"));
-		placeRow.setAddress(results.getString("address"));
-		placeRow.setPhotoReference(results.getString("photo_reference"));
+		placeRow.setCoffeeShopName(results.getString("coffee_shop_name"));		
 		return placeRow;
 	}
 	

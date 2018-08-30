@@ -129,6 +129,10 @@ public class JDBCUserDAO implements UserDAO {
 	jdbcTemplate.update(sqlString, userName);
 	}
 	
-	
-	
+	public void assignUserToShop (String googlePlaceIdea, String userName) {
+	String sqlString = "INSERT INTO user_place (user_id, google_place_id) VALUES (?,?);";
+	long userId = getUserId(userName);
+	jdbcTemplate.update(sqlString, userId, googlePlaceIdea);
+	}
+		
 }

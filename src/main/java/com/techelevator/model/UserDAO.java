@@ -24,4 +24,5 @@ public interface UserDAO {
 	
 	public void updateRoleToShopOwner(String userName);
 
+	public void assignUserToShop(String googlePlaceIdea, String userName);
 }

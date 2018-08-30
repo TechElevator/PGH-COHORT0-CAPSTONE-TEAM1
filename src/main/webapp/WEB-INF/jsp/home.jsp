@@ -56,7 +56,7 @@
 	<div class="row">		
 		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col1">			
 		</div>
-		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col2" style="background-image: url('img/jumbo9.jpg'); background-color: transparent;">
+		<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="col2">
 			<h2 id="center" style="font-family: 'Pacifico', cursive; text-align: center">Local Neighborhoods:</br>North Shore </br>Oakland </br>Shadyside </br>Lawrenceville </br>...and More</h2>
 		</div>
 	</div>

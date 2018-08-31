@@ -33,11 +33,11 @@
 		<input type="hidden" name="destination" value="${param.destination}"/>
 		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 			<div class="form-group">
-				<label for="userName">User Name: </label>
+				<label for="userName" style="color:white">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="password">Password: </label>
+				<label for="password" style="color:white">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
 			<button type="submit" class="btn btn-default">Login</button>

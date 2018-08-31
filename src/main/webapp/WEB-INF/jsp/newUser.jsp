@@ -45,15 +45,15 @@
 <form method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 			<div class="form-group">
-				<label for="userName">User Name: </label>
+				<label for="userName" style="color:white">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="password">Password: </label>
+				<label for="password" style="color:white">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
 			</div>
 			<div class="form-group">
-				<label for="confirmPassword">Confirm Password: </label>
+				<label for="confirmPassword" style="color:white">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
 			<button type="submit" class="btn btn-default">Create User</button>

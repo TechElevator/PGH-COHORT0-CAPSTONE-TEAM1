@@ -17,7 +17,7 @@ table, th, td {
 #form{
 	/*linear-gradient(90deg, rgba(255,126,95,1) 0%, rgba(254,180,123,1) 100%);*/		
 	background-color:#312319;
-	margin-top: 50px;	    
+	margin-top: 39px;	    
     min-height: 95vh; /* will cover 95% of viewport */
  	overflow: hidden;
  	display: block;

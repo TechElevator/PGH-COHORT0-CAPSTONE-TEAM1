@@ -118,7 +118,7 @@ public class UserController {
 		
 		userDAO.updateUserRole(userName, role);
 		
-		return "/users/"+currentUserName;
+		return currentUserName;
 	}
 	
 	@RequestMapping(path="/users/addPlace", method=RequestMethod.POST)

@@ -7,7 +7,7 @@
 <h2 style="color:white">Your Shop Information</h2>
  <ul>
  	<c:forEach var="place" items="${requestScope.allPlaces}">
-		<li>${place.coffeeShopName}</li>
+		<li style="color:white">${place.coffeeShopName}</li>
 	</c:forEach>
  </ul>
 

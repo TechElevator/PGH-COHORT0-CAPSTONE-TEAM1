@@ -111,14 +111,15 @@ public class UserController {
 	
 	@RequestMapping(path="/users/updateUser", method=RequestMethod.POST)
 	public String updateUserPermission(@RequestParam String userName, @RequestParam String role, @RequestParam String shop, HttpSession session) {
-		String currentUserName = userName;
+		User currentUser = (User) session.getAttribute("currentUser");
+		String currentUserName = currentUser.getUserName();
 		if (!shop.equals("Select a Shop")) {
-			userDAO.assignUserToShop(shop, currentUserName);
+			userDAO.assignUserToShop(shop, userName);
 		}
 		
 		userDAO.updateUserRole(userName, role);
 		
-		return currentUserName;
+		return "redirect:/users/"+currentUserName;
 	}
 	
 	@RequestMapping(path="/users/addPlace", method=RequestMethod.POST)
